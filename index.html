@@ -305,9 +305,9 @@ const DAYS=[
  {id:"sun",n:L("Sunday","Ravivaar","रविवार","ಭಾನುವಾರ"),s:L("Sun","Ravi","रवि","ಭಾನು"),cook:false,
   B:[S.masalaOats,S.boiled(2)],L:[S.pulao,S.raita],D:[S.cheat]},
 ];
-const MEALS=[["B",L("Breakfast","Nashta","नाश्ता","ಬೆಳಗಿನ ತಿಂಡಿ"),L("8:30–9:00 am","8:30–9:00 subah","सुबह 8:30–9:00","ಬೆಳಿಗ್ಗೆ 8:30–9:00")],
+const MEALS=[["B",L("Breakfast","Nashta","नाश्ता","ಬೆಳಗಿನ ತಿಂಡಿ"),L("7:45 am · cook comes 7:00–8:00","7:45 subah · cook 7:00–8:00","सुबह 7:45 · कुक 7:00–8:00","ಬೆಳಿಗ್ಗೆ 7:45 · ಅಡುಗೆಯವರು 7:00–8:00")],
  ["L",L("Lunch","Lunch","दोपहर का खाना","ಮಧ್ಯಾಹ್ನದ ಊಟ"),L("1:00–1:30 pm · main meal of the day","1:00–1:30 dopahar · din ka mukhya khaana","दोपहर 1:00–1:30 · दिन का मुख्य भोजन","ಮಧ್ಯಾಹ್ನ 1:00–1:30 · ದಿನದ ಮುಖ್ಯ ಊಟ")],
- ["D",L("Dinner","Dinner","रात का खाना","ರಾತ್ರಿ ಊಟ"),L("7:30–8:00 pm · light, no curd · sleep by 11","7:30–8:00 raat · halka, dahi nahi · 11 baje tak sona","रात 7:30–8:00 · हल्का, दही नहीं · 11 बजे तक सोना","ರಾತ್ರಿ 7:30–8:00 · ಹಗುರ, ಮೊಸರು ಬೇಡ · 11ಕ್ಕೆ ನಿದ್ರೆ")]];
+ ["D",L("Dinner","Dinner","रात का खाना","ರಾತ್ರಿ ಊಟ"),L("7:30 pm · cooked fresh 6:30–7:15 · light, no curd","7:30 raat · cook 6:30–7:15 taaza banaye · halka, dahi nahi","रात 7:30 · कुक 6:30–7:15 ताज़ा बनाए · हल्का, दही नहीं","ರಾತ್ರಿ 7:30 · ಅಡುಗೆಯವರು 6:30–7:15 ತಾಜಾ · ಹಗುರ, ಮೊಸರು ಬೇಡ")]];
 
 /* ---------- daily fixed + summary ---------- */
 const DAILY=[
@@ -321,7 +321,7 @@ const DAILY=[
  {name:L("11:30 am: one fruit, on its own","11:30 baje: ek phal, akele","11:30 बजे: एक फल, अकेले","11:30: ಒಂದು ಹಣ್ಣು, ಒಂಟಿಯಾಗಿ"),
   ing:[["1",L("Orange, guava or amla","Santra, amrood ya amla","संतरा, अमरूद या आंवला","ಕಿತ್ತಳೆ, ಸೀಬೆ ಅಥವಾ ನೆಲ್ಲಿಕಾಯಿ")]],
   steps:[L("Fruit alone, never with a meal. The vitamin C also helps you absorb iron from dal and palak.","Phal akele, khaane ke saath nahi. Isse dal-palak ka iron bhi achhe se lagta hai.","फल अकेले, खाने के साथ नहीं। इससे दाल-पालक का आयरन भी अच्छे से मिलता है।","ಹಣ್ಣು ಒಂಟಿಯಾಗಿ, ಊಟದ ಜೊತೆ ಬೇಡ. ಬೇಳೆ-ಪಾಲಕ್‌ನ ಕಬ್ಬಿಣ ಹೀರಲು ಸಹಾಯ.")]},
- {name:L("5 pm: whey with milk","Shaam 5 baje: whey doodh ke saath","शाम 5 बजे: व्हे दूध के साथ","ಸಂಜೆ 5: ಹಾಲಿನೊಂದಿಗೆ ವೇ"),pro:"~31 g",
+ {name:L("5:30 pm, after gym: whey with milk","Shaam 5:30, gym ke baad: whey doodh ke saath","शाम 5:30, जिम के बाद: व्हे दूध के साथ","ಸಂಜೆ 5:30, ಜಿಮ್ ನಂತರ: ಹಾಲಿನೊಂದಿಗೆ ವೇ"),pro:"~31 g",
   ing:[[q(U.scoop),I.whey],["200 ml",I.milk]],
   steps:[L("Shake whey in cold milk. No banana or fruit with it.","Whey thande doodh mein shake karo. Saath mein kela ya phal nahi.","व्हे ठंडे दूध में शेक करें। साथ में केला या फल नहीं।","ವೇ ತಣ್ಣನೆ ಹಾಲಿನಲ್ಲಿ ಶೇಕ್ ಮಾಡಿ. ಜೊತೆಗೆ ಬಾಳೆಹಣ್ಣು ಅಥವಾ ಹಣ್ಣು ಬೇಡ.")]},
 ];
@@ -349,7 +349,8 @@ const TXT={
  rules:L("Kitchen rules","Kitchen ke niyam","रसोई के नियम","ಅಡುಗೆಮನೆ ನಿಯಮ"),
  weekGlance:L("Week at a glance","Hafta ek nazar mein","हफ्ता एक नज़र में","ವಾರ ಒಂದು ನೋಟದಲ್ಲಿ"),
 };
-const PREP=[L("Buy fresh items twice a week (Sunday and Wednesday). Use a whole tofu pack each time; paneer keeps 4–5 days in water in the fridge.","Taaza saaman hafte mein 2 baar (Ravi aur Budh). Tofu ka poora pack ek baar mein; paneer paani mein fridge mein 4–5 din.","ताज़ा सामान हफ्ते में 2 बार (रवि और बुध)। टोफू का पूरा पैक एक बार में; पनीर पानी में फ्रिज में 4–5 दिन।","ತಾಜಾ ವಸ್ತು ವಾರಕ್ಕೆ 2 ಬಾರಿ (ಭಾನು, ಬುಧ). ಟೋಫು ಪ್ಯಾಕ್ ಒಮ್ಮೆಗೆ ಪೂರ್ತಿ; ಪನೀರ್ ನೀರಿನಲ್ಲಿ 4–5 ದಿನ."),
+const PREP=[L("Cook timings: morning 7:00–8:00 (breakfast, lunch, lunch box on Mon/Tue/Thu) and evening 6:30–7:15 (dinner, made fresh). No cook on Sunday.","Cook ka time: subah 7:00–8:00 (nashta, lunch, Som/Mangal/Guru ko lunch box) aur shaam 6:30–7:15 (dinner, taaza). Ravivaar cook nahi.","कुक का समय: सुबह 7:00–8:00 (नाश्ता, लंच, सोम/मंगल/गुरु को लंच बॉक्स) और शाम 6:30–7:15 (डिनर, ताज़ा)। रविवार कुक नहीं।","ಅಡುಗೆಯವರ ಸಮಯ: ಬೆಳಿಗ್ಗೆ 7:00–8:00 (ತಿಂಡಿ, ಊಟ, ಸೋಮ/ಮಂಗಳ/ಗುರು ಊಟದ ಡಬ್ಬಿ) ಮತ್ತು ಸಂಜೆ 6:30–7:15 (ರಾತ್ರಿ ಊಟ, ತಾಜಾ). ಭಾನುವಾರ ಇಲ್ಲ."),
+ L("Buy fresh items twice a week (Sunday and Wednesday). Use a whole tofu pack each time; paneer keeps 4–5 days in water in the fridge.","Taaza saaman hafte mein 2 baar (Ravi aur Budh). Tofu ka poora pack ek baar mein; paneer paani mein fridge mein 4–5 din.","ताज़ा सामान हफ्ते में 2 बार (रवि और बुध)। टोफू का पूरा पैक एक बार में; पनीर पानी में फ्रिज में 4–5 दिन।","ತಾಜಾ ವಸ್ತು ವಾರಕ್ಕೆ 2 ಬಾರಿ (ಭಾನು, ಬುಧ). ಟೋಫು ಪ್ಯಾಕ್ ಒಮ್ಮೆಗೆ ಪೂರ್ತಿ; ಪನೀರ್ ನೀರಿನಲ್ಲಿ 4–5 ದಿನ."),
  L("Chicken: order fresh on Wednesday and Saturday morning. Marinate the same day, never freeze.","Chicken: Budh aur Shani subah taaza mangao. Usi din marinate, freeze nahi.","चिकन: बुध और शनि सुबह ताज़ा मंगाएं। उसी दिन मैरिनेट, फ्रीज़ नहीं।","ಚಿಕನ್: ಬುಧ ಮತ್ತು ಶನಿ ಬೆಳಿಗ್ಗೆ ತಾಜಾ ತರಿಸಿ. ಅದೇ ದಿನ ಮ್ಯಾರಿನೇಟ್, ಫ್ರೀಜ್ ಬೇಡ."),
  L("Every night: soak 4–5 walnut halves for the morning.","Har raat: subah ke liye 4–5 akhrot bhigo do.","हर रात: सुबह के लिए 4–5 अखरोट भिगोएं।","ಪ್ರತಿ ರಾತ್ರಿ: ಬೆಳಿಗ್ಗೆಗೆ 4–5 ಅಕ್ರೋಟ್ ನೆನೆಸಿ."),
  L("Sunday night: soak moong dal for Monday dinner chilla. Monday night: soak rajma.","Ravi raat: Somvaar dinner chille ke liye moong dal bhigo. Som raat: rajma bhigo.","रवि रात: सोमवार डिनर चीले के लिए मूंग दाल भिगोएं। सोम रात: राजमा भिगोएं।","ಭಾನು ರಾತ್ರಿ: ಸೋಮವಾರ ರಾತ್ರಿ ಚಿಲ್ಲಾಗೆ ಹೆಸರು ಬೇಳೆ ನೆನೆಸಿ. ಸೋಮ ರಾತ್ರಿ: ರಾಜ್ಮಾ ನೆನೆಸಿ."),
@@ -399,6 +400,58 @@ function shopView(k){const sh=SHOP[k];
  return `<div class="dayhead"><h2>${esc(t(sh.title))}</h2></div><p class="sub" style="margin:0">${esc(t(sh.sub))}</p><div class="shop">${sh.groups.map((g,gi)=>`<div class="box"><h3>${esc(t(g.h))}${g.note?`<small>${esc(t(g.note))}</small>`:""}</h3><ul class="chk">${g.items.map(([it,qt],ii)=>{const id=`chk-${k}-${gi}-${ii}`;return `<li><label for="${id}"><input type="checkbox" id="${id}" data-tick="${id}" ${ticks[id]?"checked":""}><span>${esc(t(it))}</span><span class="q">${esc(t(qt))}</span></label></li>`}).join("")}</ul></div>`).join("")}
  <div class="box"><ul class="shopnotes">${SHOPNOTES.map(n=>`<li>${esc(t(n))}</li>`).join("")}</ul></div>
  ${PRINT?"":`<div><button class="clear" data-clear="${k}">${esc(t(L("Clear ticks","Tick hatao","टिक हटाएं","ಟಿಕ್ ತೆಗೆಯಿರಿ")))}</button></div>`}</div>`}
+
+/* ---------- routine (English) ---------- */
+const TT=[["6:15","Wake up · water · soaked walnuts and flax","Same"],
+["6:30–7:15","Brisk walk, ~5,000 steps (Sat: run · Sun: easy walk)","Same"],
+["7:00–8:00","Cook: breakfast, lunch, lunch box","Cook: breakfast and lunch"],
+["7:15–7:45","Shower, get ready","Same"],
+["7:45","Breakfast","Same"],
+["8:30–9:15","Ride to office","Me-time (optional side projects) until 10:15"],
+["9:15–10:15","Buffer at the desk","—"],
+["10:15–3:00","Work · 10:30 coffee · 11:30 fruit · 1:00 lunch · 1:30 sun walk (15 min)","Same"],
+["3:00–3:45","Ride home","Wrap up"],
+["3:45–4:20","Family call, downtime","Same"],
+["4:30–5:25","Gym, 1 km away (walk there for extra steps)","Same"],
+["5:30","Whey with 200 ml milk","Same"],
+["6:00–9:00","Meeting window · cook comes 6:30–7:15","Same"],
+["7:30","Dinner (or in a meeting gap, 6:45–8:00)","Same"],
+["After dinner","15-min walk, on a call with your girlfriend","Same"],
+["9:00–10:15","Me-time, no laptop","Same"],
+["10:15","Screens off","Same"],
+["11:00","Asleep","Same"]];
+const WEEK=[["Mon","Legs A","Walk"],["Tue","Push A","Walk"],["Wed","Pull A","Walk"],["Thu","Legs B","Walk"],["Fri","Push B","Walk"],["Sat","Pull B","Run"],["Sun","Rest","Easy walk"]];
+const WO={
+"Push A":[["Bench press","3 × 6–8","2 min"],["Overhead press","3 × 8–10","2 min"],["Incline dumbbell press","3 × 10–12","90 s"],["Lateral raise","3 × 12–15","75 s"],["Triceps pushdown","3 × 10–15","75 s"]],
+"Push B":[["Incline barbell press","3 × 6–8","2 min"],["Seated dumbbell shoulder press","3 × 8–10","2 min"],["Machine or dumbbell chest press","3 × 10–12","90 s"],["Cable lateral raise","3 × 12–15","75 s"],["Dips or overhead triceps extension","3 × 8–12","75 s"]],
+"Pull A":[["Lat pulldown","3 × 8–10","2 min"],["Barbell row","3 × 6–8","2 min"],["Seated cable row","3 × 10–12","90 s"],["Face pull","3 × 12–15","75 s"],["Dumbbell curl","3 × 10–12","75 s"]],
+"Pull B":[["Pull-ups (assisted if needed)","3 × 6–10","2 min"],["One-arm dumbbell row","3 × 8–10","90 s"],["Close-grip pulldown","3 × 10–12","90 s"],["Rear-delt fly","3 × 12–15","75 s"],["Hammer curl","3 × 10–12","75 s"]],
+"Legs A":[["Back squat","3 × 6–8","2–3 min"],["Romanian deadlift","3 × 8–10","2 min"],["Lying leg curl","3 × 10–12","90 s"],["Standing calf raise","3 × 12–15","60 s"],["Plank","3 × 40 s","60 s"]],
+"Legs B":[["Leg press","3 × 10–12","2 min"],["Walking lunges","3 × 10 / leg","90 s"],["Leg extension","3 × 12–15","75 s"],["Seated leg curl","3 × 10–12","75 s"],["Hanging knee raise","3 × 10–15","60 s"]]};
+const RUN=[["1","Run 1 min, walk 2 min × 10"],["2","Run 2 min, walk 2 min × 8"],["3","Run 3 min, walk 2 min × 6"],["4","Run 4 min, walk 1½ min × 5"],["5","Run 6 min, walk 1½ min × 4"],["6","Run 8 min, walk 1 min × 3"],["7","Run 12 min, walk 1 min, run 12 min"],["8","Run 25–30 min continuous (~4–5 km)"]];
+function routineView(){
+ const tt=`<div class="tblwrap"><table><thead><tr><th>Time</th><th>Office days (Mon, Tue, Thu)</th><th>Home days</th></tr></thead><tbody>${TT.map(r=>`<tr><td class="num">${r[0]}</td><td>${r[1]}</td><td>${r[2]==="Same"?'<span style="color:var(--muted)">Same</span>':r[2]}</td></tr>`).join("")}</tbody></table></div>`;
+ const wk=`<div class="tblwrap"><table><thead><tr><th>Day</th><th>Gym, 4:30</th><th>Morning</th></tr></thead><tbody>${WEEK.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</tbody></table></div>`;
+ const wo=Object.entries(WO).map(([k,v])=>`<div class="box"><h3>${k}</h3><div class="tblwrap"><table><thead><tr><th>Exercise</th><th>Sets × reps</th><th>Rest</th></tr></thead><tbody>${v.map(e=>`<tr><td>${e[0]}</td><td class="num">${e[1]}</td><td>${e[2]}</td></tr>`).join("")}</tbody></table></div></div>`).join("");
+ const run=`<div class="tblwrap"><table><thead><tr><th>Week</th><th>Saturday session (5-min walk warm-up first)</th></tr></thead><tbody>${RUN.map(r=>`<tr><td class="num">${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</tbody></table></div><p class="sub">Pace: you should be able to talk in full sentences. If a week feels hard, repeat it.</p>`;
+ return `<div class="sum"><h2>Daily timetable</h2><div class="box">${tt}</div>
+ <h2>Weekly training</h2><div class="grid2"><div class="box"><h3>Push · Pull · Legs, 6 days</h3>${wk}</div>
+ <div class="box"><h3>How every session runs</h3><ul class="steps" style="padding-left:18px;margin:0;display:grid;gap:4px">
+ <li>5 min warm-up: light cardio, then 1–2 light sets of the first lift.</li>
+ <li>Lift for 40–45 min, as listed below.</li><li>Finish with 10 min incline walking.</li>
+ <li>Hit the top of the rep range on every set? Add 2.5 kg next time.</li>
+ <li><b>Weeks 1–2:</b> only Mon, Tue, Wed and Fri, with 2 sets per exercise. All 6 days with 3 sets from week 3.</li>
+ <li>Missed a day? Do the next session in order the following day. Never double up.</li>
+ <li>Keep 2 reps in reserve on every set for the first 3 weeks.</li></ul></div></div>
+ <h2>Workouts</h2><div class="grid2">${wo}</div>
+ <h2>Saturday run: 8-week build-up</h2><div class="box">${run}</div>
+ <h2>Protected time</h2><div class="box"><ul class="steps" style="padding-left:18px;margin:0;display:grid;gap:4px">
+ <li>3:45–4:20 is for family, before the gym, so it never gets skipped.</li>
+ <li>9:00–10:15 pm is yours. No laptop, even if a meeting ran late.</li>
+ <li>9:45–10:15: phone down, to wind off YouTube before bed.</li>
+ <li>Saturday and Sunday afternoons are fully free.</li>
+ <li>Side projects and DSA only in the home-day morning slot, and only if you feel like it.</li></ul></div></div>`;
+}
 /* ---------- rendering ---------- */
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let state={day:"mon",meal:"B"};
@@ -428,13 +481,13 @@ function summaryView(){
 }
 function allView(){
   return `<div class="printall">${DAYS.map(d=>`<section class="dayblock">${dayHead(d)}${MEALS.map(([k,n,tm])=>`<div class="mealblock"><h4>${esc(t(n))} · <span style="font-weight:400;font-size:14px;color:var(--muted)">${esc(t(tm))}</span></h4><div class="dishes">${d[k].map(dishHTML).join("")}</div></div>`).join("")}</section>`).join("")}
-  <section class="dayblock">${dailyView()}</section><section class="dayblock">${summaryView()}</section><section class="dayblock">${shopView("sun")}</section><section class="dayblock">${shopView("wed")}</section></div>`;
+  <section class="dayblock">${dailyView()}</section><section class="dayblock">${summaryView()}</section>${lang==="en"?`<section class="dayblock">${routineView()}</section>`:""}<section class="dayblock">${shopView("sun")}</section><section class="dayblock">${shopView("wed")}</section></div>`;
 }
 function render(){
   document.documentElement.lang=lang==="hl"?"hi-Latn":lang;
-  const tabs=[...DAYS.map(d=>[d.id,t(d.s),""]),["sep"],["daily",t(TXT.daily),t(TXT.dailyS)],["summary",t(TXT.summary),t(TXT.summaryS)],["sun-shop",t(SHOP.sun.tab),t(L("Mon–Wed","Som–Budh","सोम–बुध","ಸೋಮ–ಬುಧ"))],["wed-shop",t(SHOP.wed.tab),t(L("Thu–Sun","Guru–Ravi","गुरु–रवि","ಗುರು–ಭಾನು"))],["all",t(TXT.all),t(TXT.allS)]];
+  const tabs=[...DAYS.map(d=>[d.id,t(d.s),""]),["sep"],["daily",t(TXT.daily),t(TXT.dailyS)],["summary",t(TXT.summary),t(TXT.summaryS)],["routine",t(L("Routine","Routine","दिनचर्या","ದಿನಚರಿ")),t(L("you","aap","आप","ನೀವು"))],["sun-shop",t(SHOP.sun.tab),t(L("Mon–Wed","Som–Budh","सोम–बुध","ಸೋಮ–ಬುಧ"))],["wed-shop",t(SHOP.wed.tab),t(L("Thu–Sun","Guru–Ravi","गुरु–रवि","ಗುರು–ಭಾನು"))],["all",t(TXT.all),t(TXT.allS)]];
   const day=DAYS.find(d=>d.id===state.day);
-  const body=day?dayView(day):state.day==="daily"?dailyView():state.day==="summary"?summaryView():state.day==="sun-shop"?shopView("sun"):state.day==="wed-shop"?shopView("wed"):allView();
+  const body=day?dayView(day):state.day==="daily"?dailyView():state.day==="summary"?summaryView():state.day==="routine"?routineView():state.day==="sun-shop"?shopView("sun"):state.day==="wed-shop"?shopView("wed"):allView();
   document.getElementById("app").innerHTML=`
   <header class="top"><div><h1>Chandan's Kitchen Plan</h1><p class="sub">${esc(t(TXT.sub))}</p></div>
   ${PRINT?"":`<div class="langs" role="group" aria-label="Language">${LANGS.map(([k,n])=>`<button data-lang="${k}" aria-pressed="${lang===k}">${n}</button>`).join("")}</div>`}</header>
