@@ -194,8 +194,8 @@ S.moongChilla={name:L("Moong dal chilla (× 2)","Moong dal chilla (× 2)","म�
   L("Grind with ginger, chilli, salt and a little water.","Adrak, mirch, namak, thoda paani daal ke peeso.","अदरक, मिर्च, नमक, थोड़ा पानी डालकर पीसें।","ಶುಂಠಿ, ಮೆಣಸು, ಉಪ್ಪು, ಸ್ವಲ್ಪ ನೀರಿನೊಂದಿಗೆ ರುಬ್ಬಿ."),
   L("Spread 2 thin chillas, few drops of oil each.","2 patle chille, har ek par kuch boond tel.","2 पतले चीले, हर एक पर कुछ बूंद तेल।","2 ತೆಳು ಚಿಲ್ಲಾ, ಪ್ರತಿಯೊಂದಕ್ಕೆ ಕೆಲವು ಹನಿ ಎಣ್ಣೆ.")]};
 S.oats={name:L("Overnight oats","Overnight oats","ओवरनाइट ओट्स","ಓವರ್‌ನೈಟ್ ಓಟ್ಸ್"),pro:"~35 g",
- ing:[["40 g",I.oats],[q(U.scoop),I.whey],["200 ml",I.milk],["10 g",I.seeds],["1",I.banana]],
- steps:[L("Saturday night: mix oats, whey, milk and seeds in a jar.","Shanivaar raat: jar mein oats, whey, doodh, seeds milao.","शनिवार रात: जार में ओट्स, व्हे, दूध, बीज मिलाएं।","ಶನಿವಾರ ರಾತ್ರಿ: ಜಾರ್‌ನಲ್ಲಿ ಓಟ್ಸ್, ವೇ, ಹಾಲು, ಬೀಜ ಬೆರೆಸಿ."),
+ ing:[["40 g",I.oats],[q(U.scoop),I.whey],["150 g",I.curd],["50 ml",I.water],["10 g",I.seeds],["1",I.banana]],
+ steps:[L("Saturday night: mix oats, whey, curd, water and seeds in a jar.","Shanivaar raat: jar mein oats, whey, dahi, paani, seeds milao.","शनिवार रात: जार में ओट्स, व्हे, दही, पानी, बीज मिलाएं।","ಶನಿವಾರ ರಾತ್ರಿ: ಜಾರ್‌ನಲ್ಲಿ ಓಟ್ಸ್, ವೇ, ಮೊಸರು, ನೀರು, ಬೀಜ ಬೆರೆಸಿ."),
   L("Close and keep in the fridge.","Band karke fridge mein rakho.","बंद करके फ्रिज में रखें।","ಮುಚ್ಚಿ ಫ್ರಿಜ್‌ನಲ್ಲಿ ಇಡಿ."),
   L("Morning: top with chopped banana, eat cold.","Subah: kela kaat ke upar daalo, thanda khao.","सुबह: केला काटकर ऊपर डालें, ठंडा खाएं।","ಬೆಳಿಗ್ಗೆ: ಬಾಳೆಹಣ್ಣು ಕತ್ತರಿಸಿ ಮೇಲೆ ಹಾಕಿ, ತಣ್ಣಗೆ ತಿನ್ನಿ.")]};
 S.palakPaneer={name:L("Palak paneer","Palak paneer","पालक पनीर","ಪಾಲಕ್ ಪನೀರ್"),pro:"~22 g",
@@ -228,8 +228,8 @@ S.khichdi={name:L("Dal khichdi with paneer","Paneer wali dal khichdi","पनी
   L("In the cooker: 1 tsp oil, jeera, chopped veg for 1 min.","Cooker mein: 1 tsp tel, jeera, sabzi 1 min.","कुकर में: 1 चम्मच तेल, जीरा, सब्ज़ी 1 मिनट।","ಕುಕ್ಕರ್‌ನಲ್ಲಿ: 1 ಚಮಚ ಎಣ್ಣೆ, ಜೀರಿಗೆ, ತರಕಾರಿ 1 ನಿಮಿಷ."),
   L("Add rice, dal, turmeric, salt, 3 cups water. 3 whistles.","Chawal, dal, haldi, namak, 3 cup paani. 3 seeti.","चावल, दाल, हल्दी, नमक, 3 कप पानी। 3 सीटी।","ಅಕ್ಕಿ, ಬೇಳೆ, ಅರಿಶಿನ, ಉಪ್ಪು, 3 ಕಪ್ ನೀರು. 3 ವಿಸಿಲ್."),
   L("Open, stir in paneer cubes. Eat with curd.","Kholo, paneer ke tukde milao. Dahi ke saath khao.","खोलें, पनीर के टुकड़े मिलाएं। दही के साथ खाएं।","ತೆರೆದು ಪನೀರ್ ತುಂಡು ಬೆರೆಸಿ. ಮೊಸರಿನೊಂದಿಗೆ ತಿನ್ನಿ.")]};
-S.tikka=(paneerOrTofu)=>({name:L("Tawa tofu / paneer tikka","Tawa tofu / paneer tikka","तवा टोफू / पनीर टिक्का","ತವಾ ಟೋಫು / ಪನೀರ್ ಟಿಕ್ಕಾ"),pro:"~19 g",
- ing:[["150 g",I.tofu],["— or 100 g",I.paneer],["2 tbsp",I.tbspcurd],[q(U.half),I.capsicum],[q(U.half),I.onion],[q(U.pinch),I.haldi],[q(U.taste),I.masala],["1 tsp",I.oil]],
+S.tikka=()=>({name:L("Tawa tofu tikka","Tawa tofu tikka","तवा टोफू टिक्का","ತವಾ ಟೋಫು ಟಿಕ್ಕಾ"),pro:"~24 g",
+ ing:[["200 g",I.tofu],["2 tbsp",I.tbspcurd],[q(U.half),I.capsicum],[q(U.half),I.onion],[q(U.pinch),I.haldi],[q(U.taste),I.masala],["1 tsp",I.oil]],
  steps:[L("Cut into cubes. Mix with curd, turmeric, masala. Rest 15 min.","Tukde karo. Dahi, haldi, masala mein milao. 15 min rakho.","टुकड़े करें। दही, हल्दी, मसाला में मिलाएं। 15 मिनट रखें।","ತುಂಡು ಮಾಡಿ. ಮೊಸರು, ಅರಿಶಿನ, ಮಸಾಲೆ ಜೊತೆ ಕಲಸಿ. 15 ನಿಮಿಷ ಇಡಿ."),
   L("Tawa + 1 tsp oil, cook 3–4 min each side with capsicum and onion pieces.","Tawa + 1 tsp tel, shimla mirch-pyaaz ke saath har side 3–4 min.","तवा + 1 चम्मच तेल, शिमला मिर्च-प्याज़ के साथ हर तरफ 3–4 मिनट।","ತವಾ + 1 ಚಮಚ ಎಣ್ಣೆ, ದೊಣ್ಣೆಮೆಣಸು-ಈರುಳ್ಳಿ ಜೊತೆ ಪ್ರತಿ ಬದಿ 3–4 ನಿಮಿಷ.")]});
 S.sauteVeg={name:L("Sautéed veg","Saute sabzi","सॉटे सब्ज़ी","ಸಾಟೆ ತರಕಾರಿ"),
@@ -245,8 +245,8 @@ S.eggCurry={name:L("Egg curry","Anda curry","अंडा करी","ಮೊಟ�
   L("Add ½ cup water and eggs, simmer 5 min.","½ cup paani aur ande, 5 min dheemi aanch.","½ कप पानी और अंडे, 5 मिनट धीमी आंच।","½ ಕಪ್ ನೀರು, ಮೊಟ್ಟೆ ಹಾಕಿ 5 ನಿಮಿಷ ಸಣ್ಣ ಉರಿ.")]};
 S.paneerTikka={...S.tikka(),name:L("Paneer tikka on tawa","Tawa paneer tikka","तवा पनीर टिक्का","ತವಾ ಪನೀರ್ ಟಿಕ್ಕಾ"),pro:"~19 g",
  ing:[["100 g",I.paneer],["2 tbsp",I.tbspcurd],[q(U.half),I.capsicum],[q(U.half),I.onion],[q(U.pinch),I.haldi],[q(U.taste),I.masala],["1 tsp",I.oil]]};
-S.tofuBhurji={name:L("Tofu bhurji","Tofu bhurji","टोफू भुर्जी","ಟೋಫು ಬುರ್ಜಿ"),pro:"~19 g",
- ing:[["150 g",I.tofu],[q(U.half),I.onion],[q(U.half),I.tomato],[q(U.half),I.capsicum],[q(U.pinch),I.haldi],[q(U.pinch),I.pepper],["1 tsp",I.oil],[q(U.taste),I.salt]],
+S.tofuBhurji={name:L("Tofu bhurji","Tofu bhurji","टोफू भुर्जी","ಟೋಫು ಬುರ್ಜಿ"),pro:"~24 g",
+ ing:[["200 g",I.tofu],[q(U.half),I.onion],[q(U.half),I.tomato],[q(U.half),I.capsicum],[q(U.pinch),I.haldi],[q(U.pinch),I.pepper],["1 tsp",I.oil],[q(U.taste),I.salt]],
  steps:[L("Crumble tofu with hands.","Tofu haath se masal lo.","टोफू हाथ से मसल लें।","ಟೋಫುವನ್ನು ಕೈಯಿಂದ ಪುಡಿ ಮಾಡಿ."),
   L("1 tsp oil: onion, tomato, capsicum 3 min.","1 tsp tel: pyaaz, tamatar, shimla mirch 3 min.","1 चम्मच तेल: प्याज़, टमाटर, शिमला मिर्च 3 मिनट।","1 ಚಮಚ ಎಣ್ಣೆ: ಈರುಳ್ಳಿ, ಟೊಮೆಟೊ, ದೊಣ್ಣೆಮೆಣಸು 3 ನಿಮಿಷ."),
   L("Add tofu, turmeric, salt, pepper. Cook 3 min.","Tofu, haldi, namak, kaali mirch. 3 min.","टोफू, हल्दी, नमक, काली मिर्च। 3 मिनट।","ಟೋಫು, ಅರಿಶಿನ, ಉಪ್ಪು, ಕಾಳುಮೆಣಸು. 3 ನಿಮಿಷ.")]};
@@ -262,7 +262,7 @@ const MIXDAL=S.dal("toor",L("Mixed dal","Mix dal","मिक्स दाल","�
 /* ---------- week ---------- */
 const DAYS=[
  {id:"mon",n:L("Monday","Somvaar","सोमवार","ಸೋಮವಾರ"),s:L("Mon","Som","सोम","ಸೋಮ"),cook:true,
-  B:[S.spinachOmelette,S.toast],L:[MOONGDAL,S.palakPaneer,S.roti(2),S.curd],D:[S.soyaCurry(L("Soya chunk curry","Soya chunk curry","सोया चंक करी","ಸೋಯಾ ಚಂಕ್ ಕರಿ")),S.mixveg,S.roti(1)]},
+  B:[S.spinachOmelette,S.roti(2)],L:[MOONGDAL,S.palakPaneer,S.roti(2),S.curd],D:[S.soyaCurry(L("Soya chunk curry","Soya chunk curry","सोया चंक करी","ಸೋಯಾ ಚಂಕ್ ಕರಿ")),S.mixveg,S.roti(1)]},
  {id:"tue",n:L("Tuesday","Mangalvaar","मंगलवार","ಮಂಗಳವಾರ"),s:L("Tue","Mangal","मंगल","ಮಂಗಳ"),cook:true,
   B:[S.besanChilla,S.curd],L:[S.rice,S.rajma,S.boiled(2),S.salad],D:[S.tikka(),S.sauteVeg,S.roti(1)]},
  {id:"wed",n:L("Wednesday","Budhvaar","बुधवार","ಬುಧವಾರ"),s:L("Wed","Budh","बुध","ಬುಧ"),cook:true,
@@ -272,7 +272,7 @@ const DAYS=[
  {id:"fri",n:L("Friday","Shukravaar","शुक्रवार","ಶುಕ್ರವಾರ"),s:L("Fri","Shukra","शुक्र","ಶುಕ್ರ"),cook:true,
   B:[S.moongChilla,S.boiled(2)],L:[S.lobia,S.soyaCurry(L("Soya sabzi","Soya sabzi","सोया सब्ज़ी","ಸೋಯಾ ಪಲ್ಯ")),S.roti(2),S.salad],D:[S.paneerTikka,S.palak,S.roti(1)]},
  {id:"sat",n:L("Saturday","Shanivaar","शनिवार","ಶನಿವಾರ"),s:L("Sat","Shani","शनि","ಶನಿ"),cook:true,
-  B:[S.masalaOmelette,S.toast],L:[S.tawaChicken,S.rice,S.raita],D:[MIXDAL,S.tofuBhurji,S.roti(1)]},
+  B:[S.masalaOmelette,S.roti(2)],L:[S.tawaChicken,S.rice,S.raita],D:[MIXDAL,S.tofuBhurji,S.roti(1)]},
  {id:"sun",n:L("Sunday","Ravivaar","रविवार","ಭಾನುವಾರ"),s:L("Sun","Ravi","रवि","ಭಾನು"),cook:false,
   B:[S.oats],L:[S.khichdi,S.curd],D:[S.cheat]},
 ];
@@ -295,10 +295,9 @@ const DAILY=[
   ing:[["150 g",I.curd]],steps:[L("Plain, no sugar.","Saada, cheeni nahi.","सादा, चीनी नहीं।","ಸಾದಾ, ಸಕ್ಕರೆ ಬೇಡ.")]},
 ];
 const GROCERY=[
- [I.egg,L("23 eggs","23 ande","23 अंडे","23 ಮೊಟ್ಟೆ")],[I.paneer,"425 g"],[I.tofu,"300 g"],[I.chicken,"300 g"],
+ [I.egg,L("23 eggs","23 ande","23 अंडे","23 ಮೊಟ್ಟೆ")],[I.paneer,"425 g"],[I.tofu,L("400 g (2 packs)","400 g (2 pack)","400 ग्राम (2 पैक)","400 ಗ್ರಾಂ (2 ಪ್ಯಾಕ್)")],[I.chicken,"300 g"],
  [I.soya,"100 g"],[I.granules,"50 g"],[I.rajma,"50 g"],[I.lobia,"50 g"],[I.moong,"140 g"],[I.toor,"120 g"],[I.besan,"40 g"],
- [I.rice,"220 g"],[I.atta,"390 g"],[I.ragi,"30 g"],[I.poha,"50 g"],[I.oats,"40 g"],[I.bread,L("4 slices","4 slice","4 स्लाइस","4 ಸ್ಲೈಸ್")],
- [I.palak,"650 g"],[I.veg,"~400 g"],[I.curd,"~1.7 kg"],[I.milk,"200 ml"],[I.whey,L("8 scoops","8 scoop","8 स्कूप","8 ಸ್ಕೂಪ್")],
+ [I.rice,"220 g"],[I.atta,"510 g"],[I.ragi,"30 g"],[I.poha,"50 g"],[I.oats,"40 g"], [I.palak,"650 g"],[I.veg,"~400 g"],[I.curd,"~1.9 kg"],[I.whey,L("8 scoops","8 scoop","8 स्कूप","8 ಸ್ಕೂಪ್")],
  [I.banana,"8"],[L("Fruit (orange / guava / amla)","Phal (santra / amrood / amla)","फल (संतरा / अमरूद / आंवला)","ಹಣ್ಣು (ಕಿತ್ತಳೆ / ಸೀಬೆ / ನೆಲ್ಲಿ)"),"7"],
  [L("Almonds / walnuts","Badaam / akhrot","बादाम / अखरोट","ಬಾದಾಮಿ / ಅಕ್ರೋಟ್"),"~105 g"],[I.seeds,"~80 g"],
 ];
@@ -318,7 +317,7 @@ const TXT={
  rules:L("Kitchen rules","Kitchen ke niyam","रसोई के नियम","ಅಡುಗೆಮನೆ ನಿಯಮ"),
  weekGlance:L("Week at a glance","Hafta ek nazar mein","हफ्ता एक नज़र में","ವಾರ ಒಂದು ನೋಟದಲ್ಲಿ"),
 };
-const PREP=[L("Monday night: soak rajma.","Somvaar raat: rajma bhigo do.","सोमवार रात: राजमा भिगोएं।","ಸೋಮವಾರ ರಾತ್ರಿ: ರಾಜ್ಮಾ ನೆನೆಸಿ."),
+const PREP=[L("Buy fresh items twice a week (Sunday and Wednesday): paneer, tofu, curd, palak, veg. Use a whole tofu pack each time; paneer keeps 4–5 days in water in the fridge.","Taaza saaman hafte mein 2 baar lo (Ravi aur Budh): paneer, tofu, dahi, palak, sabzi. Tofu ka poora pack ek baar mein; paneer paani mein fridge mein 4–5 din chalta hai.","ताज़ा सामान हफ्ते में 2 बार लें (रवि और बुध): पनीर, टोफू, दही, पालक, सब्ज़ी। टोफू का पूरा पैक एक बार में; पनीर पानी में फ्रिज में 4–5 दिन चलता है।","ತಾಜಾ ವಸ್ತು ವಾರಕ್ಕೆ 2 ಬಾರಿ ಖರೀದಿಸಿ (ಭಾನು, ಬುಧ): ಪನೀರ್, ಟೋಫು, ಮೊಸರು, ಪಾಲಕ್, ತರಕಾರಿ. ಟೋಫು ಪ್ಯಾಕ್ ಒಮ್ಮೆಗೆ ಪೂರ್ತಿ ಬಳಸಿ; ಪನೀರ್ ನೀರಿನಲ್ಲಿ ಫ್ರಿಜ್‌ನಲ್ಲಿ 4–5 ದಿನ ಇರುತ್ತದೆ."),L("Monday night: soak rajma.","Somvaar raat: rajma bhigo do.","सोमवार रात: राजमा भिगोएं।","ಸೋಮವಾರ ರಾತ್ರಿ: ರಾಜ್ಮಾ ನೆನೆಸಿ."),
  L("Thursday night: soak lobia and moong dal (for Friday chilla).","Guruvaar raat: lobia aur moong dal bhigo do (Shukravaar chilla).","गुरुवार रात: लोबिया और मूंग दाल भिगोएं (शुक्रवार चीला)।","ಗುರುವಾರ ರಾತ್ರಿ: ಅಲಸಂದೆ, ಹೆಸರು ಬೇಳೆ ನೆನೆಸಿ (ಶುಕ್ರವಾರ ಚಿಲ್ಲಾ)."),
  L("Tuesday & Friday: marinate chicken for the next day and keep in fridge.","Mangal aur Shukra: agle din ka chicken marinate karke fridge mein.","मंगल और शुक्र: अगले दिन का चिकन मैरिनेट करके फ्रिज में।","ಮಂಗಳ ಮತ್ತು ಶುಕ್ರ: ಮರುದಿನದ ಚಿಕನ್ ಮ್ಯಾರಿನೇಟ್ ಮಾಡಿ ಫ್ರಿಜ್‌ನಲ್ಲಿ."),
  L("Saturday: leave chopped veg and paneer for Sunday khichdi. Make overnight oats at night.","Shanivaar: Ravivaar khichdi ke liye sabzi kaat ke, paneer rakh do. Raat ko overnight oats.","शनिवार: रविवार खिचड़ी के लिए सब्ज़ी काटकर, पनीर रखें। रात को ओवरनाइट ओट्स।","ಶನಿವಾರ: ಭಾನುವಾರ ಕಿಚಡಿಗೆ ತರಕಾರಿ ಕತ್ತರಿಸಿ, ಪನೀರ್ ಇಡಿ. ರಾತ್ರಿ ಓವರ್‌ನೈಟ್ ಓಟ್ಸ್.")];
