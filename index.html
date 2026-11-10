@@ -112,7 +112,7 @@ oats:L("Rolled oats","Oats","ओट्स","ಓಟ್ಸ್"),whey:L("Whey prote
 seeds:L("Mixed seeds / ground flax","Mixed seeds / alsi","मिक्स बीज / अलसी","ಮಿಶ್ರ ಬೀಜ / ಅಗಸೆ"),banana:L("Banana","Kela","केला","ಬಾಳೆಹಣ್ಣು"),
 rajma:L("Rajma (dry)","Rajma (sukha)","राजमा (सूखा)","ರಾಜ್ಮಾ (ಒಣ)"),rice:L("Rice (raw)","Chawal (kachcha)","चावल (कच्चा)","ಅಕ್ಕಿ"),
 cucumber:L("Cucumber","Kheera","खीरा","ಸೌತೆಕಾಯಿ"),carrot:L("Carrot","Gajar","गाजर","ಕ್ಯಾರೆಟ್"),beet:L("Beetroot","Chukandar","चुकंदर","ಬೀಟ್‌ರೂಟ್"),
-chicken:L("Boneless chicken","Boneless chicken","बोनलेस चिकन","ಬೋನ್‌ಲೆಸ್ ಚಿಕನ್"),lobia:L("Lobia (dry)","Lobia (sukha)","लोबिया (सूखा)","ಅಲಸಂದೆ (ಒಣ)"),
+chicken:L("Boneless chicken","Boneless chicken","बोनलेस चिकन","ಬೋನ್‌ಲೆಸ್ ಚಿಕನ್"),kalachana:L("Kala chana (dry)","Kala chana (sukha)","काला चना (सूखा)","ಕಪ್ಪು ಕಡಲೆ (ಒಣ)"),kabuli:L("Kabuli chana / chole (dry)","Kabuli chana / chhole (sukhe)","काबुली चना / छोले (सूखे)","ಕಾಬೂಲಿ ಕಡಲೆ (ಒಣ)"),daliya:L("Daliya (broken wheat)","Daliya","दलिया","ಗೋಧಿ ನುಚ್ಚು"),vermicelli:L("Ragi or whole-wheat vermicelli","Ragi ya atta sevaiyan","रागी या आटा सेवइयां","ರಾಗಿ ಅಥವಾ ಗೋಧಿ ಶಾವಿಗೆ"),cholemasala:L("Chole masala","Chhole masala","छोले मसाला","ಚೋಲೆ ಮಸಾಲಾ"),lobia:L("Lobia (dry)","Lobia (sukha)","लोबिया (सूखा)","ಅಲಸಂದೆ (ಒಣ)"),
 soya:L("Soya chunks (dry)","Soya chunks (sukhe)","सोया चंक्स (सूखे)","ಸೋಯಾ ಚಂಕ್ಸ್ (ಒಣ)"),granules:L("Soya granules (dry)","Soya granules (sukhe)","सोया ग्रेन्यूल्स (सूखे)","ಸೋಯಾ ಗ್ರಾನ್ಯೂಲ್ಸ್ (ಒಣ)"),
 tofu:L("Tofu (firm)","Tofu","टोफू","ಟೋಫು"),veg:L("Mixed veg (beans, carrot, cabbage)","Mix sabzi (beans, gajar, patta gobhi)","मिक्स सब्ज़ी (बीन्स, गाजर, पत्ता गोभी)","ಮಿಶ್ರ ತರಕಾರಿ (ಬೀನ್ಸ್, ಕ್ಯಾರೆಟ್, ಎಲೆಕೋಸು)"),
 toor:L("Toor / mixed dal","Toor / mix dal","तूर / मिक्स दाल","ತೊಗರಿ / ಮಿಶ್ರ ಬೇಳೆ"),masala:L("Salt, chilli powder, garam masala","Namak, laal mirch, garam masala","नमक, लाल मिर्च, गरम मसाला","ಉಪ್ಪು, ಮೆಣಸಿನ ಪುಡಿ, ಗರಂ ಮಸಾಲಾ"),
@@ -286,6 +286,26 @@ S.pulao={name:L("Veg paneer pulao","Veg paneer pulao","वेज पनीर �
   L("Add veg, paneer, salt and garam masala. Stir 1 min.","Sabzi, paneer, namak, garam masala. 1 min chalao.","सब्ज़ी, पनीर, नमक, गरम मसाला। 1 मिनट चलाएं।","ತರಕಾರಿ, ಪನೀರ್, ಉಪ್ಪು, ಗರಂ ಮಸಾಲಾ. 1 ನಿಮಿಷ ಕಲಕಿ."),
   L("Add rice and 150 ml water. 2 whistles, then rest 10 min before opening.","Chawal aur 150 ml paani. 2 seeti, kholne se pehle 10 min rukko.","चावल और 150 ml पानी। 2 सीटी, खोलने से पहले 10 मिनट रुकें।","ಅಕ್ಕಿ ಮತ್ತು 150 ml ನೀರು. 2 ವಿಸಿಲ್, ತೆರೆಯುವ ಮೊದಲು 10 ನಿಮಿಷ ಕಾಯಿರಿ.")]};
 S.moongChillaDinner={...S.moongChilla,name:L("Moong dal chilla (× 2)","Moong dal chilla (× 2)","मूंग दाल चीला (× 2)","ಹೆಸರು ಬೇಳೆ ಚಿಲ್ಲಾ (× 2)")};
+S.chole={name:L("Chole","Chhole","छोले","ಚೋಲೆ (ಕಾಬೂಲಿ ಕಡಲೆ)"),pro:"~10 g",
+ ing:[["50 g",I.kabuli],...MASALA_ING,["1 tsp",I.cholemasala]],
+ steps:[L("Soak chole overnight (Wednesday night).","Chhole raat bhar bhigo do (Budhvaar raat).","छोले रात भर भिगोएं (बुधवार रात)।","ಕಾಬೂಲಿ ಕಡಲೆ ರಾತ್ರಿ ನೆನೆಸಿ (ಬುಧವಾರ ರಾತ್ರಿ)."),
+  L("Pressure cook with salt, 5–6 whistles till soft.","Namak ke saath 5–6 seeti, naram hone tak.","नमक के साथ 5–6 सीटी, नरम होने तक।","ಉಪ್ಪಿನೊಂದಿಗೆ 5–6 ವಿಸಿಲ್, ಮೆತ್ತಗಾಗುವವರೆಗೆ."),...MASALA_STEPS,
+  L("Add chole masala, then chole with some water. Simmer 10 min, mash a few to thicken.","Chhole masala, phir chhole thode paani ke saath. 10 min dheemi aanch, kuch chhole masal do.","छोले मसाला, फिर छोले थोड़े पानी के साथ। 10 मिनट धीमी आंच, कुछ छोले मसल दें।","ಚೋಲೆ ಮಸಾಲಾ, ನಂತರ ಕಡಲೆ ಸ್ವಲ್ಪ ನೀರಿನೊಂದಿಗೆ. 10 ನಿಮಿಷ ಸಣ್ಣ ಉರಿ, ಕೆಲವು ಕಡಲೆ ಜಜ್ಜಿ.")]};
+S.kalaChana={name:L("Kala chana","Kala chana","काला चना","ಕಪ್ಪು ಕಡಲೆ ಸಾರು"),pro:"~10 g",
+ ing:[["50 g",I.kalachana],...MASALA_ING],
+ steps:[L("Soak kala chana overnight (Thursday night).","Kala chana raat bhar bhigo do (Guruvaar raat).","काला चना रात भर भिगोएं (गुरुवार रात)।","ಕಪ್ಪು ಕಡಲೆ ರಾತ್ರಿ ನೆನೆಸಿ (ಗುರುವಾರ ರಾತ್ರಿ)."),
+  L("Pressure cook with salt, 6–7 whistles.","Namak ke saath 6–7 seeti.","नमक के साथ 6–7 सीटी।","ಉಪ್ಪಿನೊಂದಿಗೆ 6–7 ವಿಸಿಲ್."),...MASALA_STEPS,
+  L("Add chana with its water, simmer 10 min till thick.","Chana paani samet daalo, 10 min gaadha hone tak.","चना पानी समेत डालें, 10 मिनट गाढ़ा होने तक।","ಕಡಲೆ ನೀರಿನೊಂದಿಗೆ ಹಾಕಿ, 10 ನಿಮಿಷ ದಪ್ಪವಾಗುವವರೆಗೆ.")]};
+const UPMA_TADKA=L("1 tsp oil: mustard, curry leaves, onion, then the veg for 2 min.","1 tsp tel: rai, kadi patta, pyaaz, phir sabzi 2 min.","1 चम्मच तेल: राई, कड़ी पत्ता, प्याज़, फिर सब्ज़ी 2 मिनट।","1 ಚಮಚ ಎಣ್ಣೆ: ಸಾಸಿವೆ, ಕರಿಬೇವು, ಈರುಳ್ಳಿ, ನಂತರ ತರಕಾರಿ 2 ನಿಮಿಷ.");
+const UPMA_ING=[["50 g",L("Veg: carrot, peas, beans","Sabzi: gajar, matar, beans","सब्ज़ी: गाजर, मटर, बीन्स","ತರಕಾರಿ: ಕ್ಯಾರೆಟ್, ಬಟಾಣಿ, ಬೀನ್ಸ್")],[q(U.half),I.onion],[q(U.few),I.curryleaf],["½ tsp",I.mustard],["1 tsp",I.oil],[q(U.half),I.lemon],[q(U.taste),I.salt]];
+S.daliya={name:L("Veg daliya upma","Veg daliya upma","वेज दलिया उपमा","ಗೋಧಿ ನುಚ್ಚಿನ ಉಪ್ಪಿಟ್ಟು"),pro:"~5 g",
+ ing:[["35 g",I.daliya],...UPMA_ING,["1 cup",I.water]],
+ steps:[L("Dry-roast daliya 3 min till it smells nutty.","Daliya bina tel 3 min bhuno.","दलिया बिना तेल 3 मिनट भूनें।","ಗೋಧಿ ನುಚ್ಚನ್ನು ಎಣ್ಣೆಯಿಲ್ಲದೆ 3 ನಿಮಿಷ ಹುರಿಯಿರಿ."),UPMA_TADKA,
+  L("Add daliya, salt and 1 cup hot water. Pressure cook 2 whistles. Squeeze lemon.","Daliya, namak, 1 cup garam paani. 2 seeti. Nimbu nichodo.","दलिया, नमक, 1 कप गरम पानी। 2 सीटी। नींबू निचोड़ें।","ನುಚ್ಚು, ಉಪ್ಪು, 1 ಕಪ್ ಬಿಸಿ ನೀರು. 2 ವಿಸಿಲ್. ನಿಂಬೆ ಹಿಂಡಿ.")]};
+S.sevaiyan={name:L("Namkeen sevaiyan","Namkeen sevaiyan","नमकीन सेवइयां","ಶಾವಿಗೆ ಉಪ್ಪಿಟ್ಟು"),pro:"~4 g",
+ ing:[["35 g",I.vermicelli],...UPMA_ING,["¾ cup",I.water]],
+ steps:[L("Dry-roast vermicelli 2 min till light brown.","Sevaiyan bina tel 2 min halka bhuno.","सेवइयां बिना तेल 2 मिनट हल्का भूनें।","ಶಾವಿಗೆಯನ್ನು ಎಣ್ಣೆಯಿಲ್ಲದೆ 2 ನಿಮಿಷ ಹುರಿಯಿರಿ."),UPMA_TADKA,
+  L("Add ¾ cup hot water and salt, boil, then add vermicelli. Cover, low flame 4–5 min till dry. Squeeze lemon.","¾ cup garam paani, namak, ubaal aane par sevaiyan. Dhak ke dheemi aanch 4–5 min. Nimbu.","¾ कप गरम पानी, नमक, उबाल आने पर सेवइयां। ढककर धीमी आंच 4–5 मिनट। नींबू।","¾ ಕಪ್ ಬಿಸಿ ನೀರು, ಉಪ್ಪು, ಕುದಿದಾಗ ಶಾವಿಗೆ. ಮುಚ್ಚಿ ಸಣ್ಣ ಉರಿ 4–5 ನಿಮಿಷ. ನಿಂಬೆ.")]};
 const DAL=S.dal("toor",L("Dal","Dal","दाल","ಬೇಳೆ ಸಾರು"));
 const MOONGDAL=S.dal("moong",L("Moong dal","Moong dal","मूंग दाल","ಹೆಸರು ಬೇಳೆ ಸಾರು"));
 const MIXDAL=S.dal("toor",L("Mixed dal","Mix dal","मिक्स दाल","ಮಿಶ್ರ ಬೇಳೆ ಸಾರು"));
@@ -293,19 +313,19 @@ const MIXDAL=S.dal("toor",L("Mixed dal","Mix dal","मिक्स दाल","�
 /* ---------- week ---------- */
 const DAYS=[
  {id:"mon",n:L("Monday","Somvaar","सोमवार","ಸೋಮವಾರ"),s:L("Mon","Som","सोम","ಸೋಮ"),cook:true,
-  B:[S.spinachOmelette,S.masalaOats],L:[S.palakPaneer,DAL,S.roti(2),S.curd],D:[S.moongChillaDinner,S.mixveg]},
+  B:[S.spinachOmelette,S.daliya],L:[S.palakPaneer,DAL,S.roti(2),S.curd],D:[S.moongChillaDinner,S.mixveg]},
  {id:"tue",n:L("Tuesday","Mangalvaar","मंगलवार","ಮಂಗಳವಾರ"),s:L("Tue","Mangal","मंगल","ಮಂಗಳ"),cook:true,
-  B:[S.besanChilla,S.curd],L:[S.rice,S.rajma,S.boiled(2),S.salad,S.curd],D:[S.tikka(),S.sauteVeg,S.roti(1)]},
+  B:[S.besanChilla,S.curd],L:[S.rice,S.rajma,S.boiled(2),S.salad,S.curd],D:[S.eggBhurji,S.sauteVeg,S.roti(1)]},
  {id:"wed",n:L("Wednesday","Budhvaar","बुधवार","ಬುಧವಾರ"),s:L("Wed","Budh","बुध","ಬುಧ"),cook:true,
   B:[S.eggBhurji,S.ragiDosa],L:[S.tawaChicken,DAL,S.roti(2),S.salad],D:[MOONGDAL,S.palak,S.roti(1)]},
  {id:"thu",n:L("Thursday","Guruvaar","गुरुवार","ಗುರುವಾರ"),s:L("Thu","Guru","गुरु","ಗುರು"),cook:true,
-  B:[S.poha,S.boiled(3)],L:[S.rice,DAL,S.paneerSabzi,S.carrotBeet,S.curd],D:[S.eggCurry,S.palak,S.roti(1)]},
+  B:[S.poha,S.boiled(3)],L:[S.rice,S.chole,S.paneerSabzi,S.carrotBeet,S.curd],D:[S.eggCurry,S.palak,S.roti(1)]},
  {id:"fri",n:L("Friday","Shukravaar","शुक्रवार","ಶುಕ್ರವಾರ"),s:L("Fri","Shukra","शुक्र","ಶುಕ್ರ"),cook:true,
-  B:[S.moongChilla,S.boiled(2)],L:[S.lobia,S.soyaCurry(L("Soya sabzi","Soya sabzi","सोया सब्ज़ी","ಸೋಯಾ ಪಲ್ಯ")),S.roti(2),S.salad,S.curd],D:[S.tofuBhurji,S.palak,S.roti(1)]},
+  B:[S.moongChilla,S.boiled(2)],L:[S.kalaChana,S.soyaCurry(L("Soya sabzi","Soya sabzi","सोया सब्ज़ी","ಸೋಯಾ ಪಲ್ಯ")),S.roti(2),S.salad,S.curd],D:[MOONGDAL,S.palak,S.roti(1)]},
  {id:"sat",n:L("Saturday","Shanivaar","शनिवार","ಶನಿವಾರ"),s:L("Sat","Shani","शनि","ಶನಿ"),cook:true,
-  B:[S.masalaOmelette,S.masalaOats],L:[S.tawaChicken,S.rice,S.salad],D:[MIXDAL,S.mixveg,S.roti(1)]},
+  B:[S.masalaOmelette,S.sevaiyan],L:[S.tawaChicken,S.rice,S.salad],D:[MIXDAL,S.mixveg,S.roti(1)]},
  {id:"sun",n:L("Sunday","Ravivaar","रविवार","ಭಾನುವಾರ"),s:L("Sun","Ravi","रवि","ಭಾನು"),cook:false,
-  B:[S.masalaOats,S.boiled(2)],L:[S.pulao,S.raita],D:[S.cheat]},
+  B:[S.sevaiyan,S.boiled(2)],L:[S.pulao,S.raita],D:[S.cheat]},
 ];
 const MEALS=[["B",L("Breakfast","Nashta","नाश्ता","ಬೆಳಗಿನ ತಿಂಡಿ"),L("7:45 am · cook comes 7:00–8:00","7:45 subah · cook 7:00–8:00","सुबह 7:45 · कुक 7:00–8:00","ಬೆಳಿಗ್ಗೆ 7:45 · ಅಡುಗೆಯವರು 7:00–8:00")],
  ["L",L("Lunch","Lunch","दोपहर का खाना","ಮಧ್ಯಾಹ್ನದ ಊಟ"),L("1:00–1:30 pm · main meal of the day","1:00–1:30 dopahar · din ka mukhya khaana","दोपहर 1:00–1:30 · दिन का मुख्य भोजन","ಮಧ್ಯಾಹ್ನ 1:00–1:30 · ದಿನದ ಮುಖ್ಯ ಊಟ")],
@@ -328,10 +348,10 @@ const DAILY=[
   steps:[L("Shake whey in cold milk. No banana or fruit with it.","Whey thande doodh mein shake karo. Saath mein kela ya phal nahi.","व्हे ठंडे दूध में शेक करें। साथ में केला या फल नहीं।","ವೇ ತಣ್ಣನೆ ಹಾಲಿನಲ್ಲಿ ಶೇಕ್ ಮಾಡಿ. ಜೊತೆಗೆ ಬಾಳೆಹಣ್ಣು ಅಥವಾ ಹಣ್ಣು ಬೇಡ.")]},
 ];
 const GROCERY=[
- [I.egg,L("25 eggs","25 ande","25 अंडे","25 ಮೊಟ್ಟೆ")],[I.paneer,"350 g"],[I.tofu,L("400 g (2 packs)","400 g (2 pack)","400 ग्राम (2 पैक)","400 ಗ್ರಾಂ (2 ಪ್ಯಾಕ್)")],[I.chicken,"300 g"],
- [I.soya,"50 g"],[I.rajma,"50 g"],[I.lobia,"50 g"],[I.moong,"160 g"],[I.toor,"160 g"],[I.besan,"40 g"],
- [I.rice,"240 g"],[I.atta,"330 g"],[I.ragi,"40 g"],[I.poha,"50 g"],[I.oats,"90 g"],
- [I.palak,"850 g"],[I.veg,"~600 g"],[I.curd,"~1.1 kg"],[I.milk,"3.15 L"],[I.whey,L("7 scoops","7 scoop","7 स्कूप","7 ಸ್ಕೂಪ್")],[I.ghee,"~40 g"],
+ [I.egg,L("28 eggs","28 ande","28 अंडे","28 ಮೊಟ್ಟೆ")],[I.paneer,"350 g"],[I.chicken,"300 g"],
+ [I.soya,"50 g"],[I.rajma,"50 g"],[I.kabuli,"50 g"],[I.kalachana,"50 g"],[I.moong,"200 g"],[I.toor,"120 g"],[I.besan,"40 g"],
+ [I.rice,"240 g"],[I.atta,"330 g"],[I.ragi,"40 g"],[I.poha,"50 g"],[I.daliya,"35 g"],[I.vermicelli,"70 g"],
+ [I.palak,"850 g"],[I.veg,"~750 g"],[I.curd,"~1.1 kg"],[I.milk,"3.15 L"],[I.whey,L("7 scoops","7 scoop","7 स्कूप","7 ಸ್ಕೂಪ್")],[I.ghee,"~40 g"],
  [L("Fruit (orange / guava / amla)","Phal (santra / amrood / amla)","फल (संतरा / अमरूद / आंवला)","ಹಣ್ಣು (ಕಿತ್ತಳೆ / ಸೀಬೆ / ನೆಲ್ಲಿ)"),"7"],
  [I.walnut,"~105 g"],[I.flax,"~70 g"],[I.coffee,"~100 g"],[I.jaggery,"~35 g"],
 ];
@@ -352,11 +372,11 @@ const TXT={
  weekGlance:L("Week at a glance","Hafta ek nazar mein","हफ्ता एक नज़र में","ವಾರ ಒಂದು ನೋಟದಲ್ಲಿ"),
 };
 const PREP=[L("Cook timings: morning 7:00–8:00 (breakfast, lunch, lunch box on Mon/Tue/Thu) and evening 6:30–7:15 (dinner, made fresh). No cook on Sunday.","Cook ka time: subah 7:00–8:00 (nashta, lunch, Som/Mangal/Guru ko lunch box) aur shaam 6:30–7:15 (dinner, taaza). Ravivaar cook nahi.","कुक का समय: सुबह 7:00–8:00 (नाश्ता, लंच, सोम/मंगल/गुरु को लंच बॉक्स) और शाम 6:30–7:15 (डिनर, ताज़ा)। रविवार कुक नहीं।","ಅಡುಗೆಯವರ ಸಮಯ: ಬೆಳಿಗ್ಗೆ 7:00–8:00 (ತಿಂಡಿ, ಊಟ, ಸೋಮ/ಮಂಗಳ/ಗುರು ಊಟದ ಡಬ್ಬಿ) ಮತ್ತು ಸಂಜೆ 6:30–7:15 (ರಾತ್ರಿ ಊಟ, ತಾಜಾ). ಭಾನುವಾರ ಇಲ್ಲ."),
- L("Buy fresh items twice a week (Sunday and Wednesday). Use a whole tofu pack each time; paneer keeps 4–5 days in water in the fridge.","Taaza saaman hafte mein 2 baar (Ravi aur Budh). Tofu ka poora pack ek baar mein; paneer paani mein fridge mein 4–5 din.","ताज़ा सामान हफ्ते में 2 बार (रवि और बुध)। टोफू का पूरा पैक एक बार में; पनीर पानी में फ्रिज में 4–5 दिन।","ತಾಜಾ ವಸ್ತು ವಾರಕ್ಕೆ 2 ಬಾರಿ (ಭಾನು, ಬುಧ). ಟೋಫು ಪ್ಯಾಕ್ ಒಮ್ಮೆಗೆ ಪೂರ್ತಿ; ಪನೀರ್ ನೀರಿನಲ್ಲಿ 4–5 ದಿನ."),
+ L("Buy fresh items twice a week (Sunday and Wednesday). Paneer keeps 4–5 days in water in the fridge.","Taaza saaman hafte mein 2 baar (Ravi aur Budh). Paneer paani mein fridge mein 4–5 din.","ताज़ा सामान हफ्ते में 2 बार (रवि और बुध)। पनीर पानी में फ्रिज में 4–5 दिन।","ತಾಜಾ ವಸ್ತು ವಾರಕ್ಕೆ 2 ಬಾರಿ (ಭಾನು, ಬುಧ). ಪನೀರ್ ನೀರಿನಲ್ಲಿ ಫ್ರಿಜ್‌ನಲ್ಲಿ 4–5 ದಿನ."),
  L("Chicken: order fresh on Wednesday and Saturday morning. Marinate the same day, never freeze.","Chicken: Budh aur Shani subah taaza mangao. Usi din marinate, freeze nahi.","चिकन: बुध और शनि सुबह ताज़ा मंगाएं। उसी दिन मैरिनेट, फ्रीज़ नहीं।","ಚಿಕನ್: ಬುಧ ಮತ್ತು ಶನಿ ಬೆಳಿಗ್ಗೆ ತಾಜಾ ತರಿಸಿ. ಅದೇ ದಿನ ಮ್ಯಾರಿನೇಟ್, ಫ್ರೀಜ್ ಬೇಡ."),
  L("Every night: soak 4–5 walnut halves for the morning.","Har raat: subah ke liye 4–5 akhrot bhigo do.","हर रात: सुबह के लिए 4–5 अखरोट भिगोएं।","ಪ್ರತಿ ರಾತ್ರಿ: ಬೆಳಿಗ್ಗೆಗೆ 4–5 ಅಕ್ರೋಟ್ ನೆನೆಸಿ."),
  L("Sunday night: soak moong dal for Monday dinner chilla. Monday night: soak rajma.","Ravi raat: Somvaar dinner chille ke liye moong dal bhigo. Som raat: rajma bhigo.","रवि रात: सोमवार डिनर चीले के लिए मूंग दाल भिगोएं। सोम रात: राजमा भिगोएं।","ಭಾನು ರಾತ್ರಿ: ಸೋಮವಾರ ರಾತ್ರಿ ಚಿಲ್ಲಾಗೆ ಹೆಸರು ಬೇಳೆ ನೆನೆಸಿ. ಸೋಮ ರಾತ್ರಿ: ರಾಜ್ಮಾ ನೆನೆಸಿ."),
- L("Thursday night: soak lobia and moong dal (Friday chilla).","Guru raat: lobia aur moong dal bhigo (Shukra chilla).","गुरु रात: लोबिया और मूंग दाल भिगोएं (शुक्र चीला)।","ಗುರು ರಾತ್ರಿ: ಅಲಸಂದೆ, ಹೆಸರು ಬೇಳೆ ನೆನೆಸಿ (ಶುಕ್ರ ಚಿಲ್ಲಾ)."),
+ L("Wednesday night: soak chole. Thursday night: soak kala chana and moong dal (Friday chilla).","Budh raat: chhole bhigo. Guru raat: kala chana aur moong dal bhigo (Shukra chilla).","बुध रात: छोले भिगोएं। गुरु रात: काला चना और मूंग दाल भिगोएं (शुक्र चीला)।","ಬುಧ ರಾತ್ರಿ: ಕಾಬೂಲಿ ಕಡಲೆ ನೆನೆಸಿ. ಗುರು ರಾತ್ರಿ: ಕಪ್ಪು ಕಡಲೆ, ಹೆಸರು ಬೇಳೆ ನೆನೆಸಿ (ಶುಕ್ರ ಚಿಲ್ಲಾ)."),
  L("Saturday: leave chopped veg and paneer ready for Sunday pulao.","Shanivaar: Ravivaar pulao ke liye sabzi kaat ke, paneer ready rakho.","शनिवार: रविवार पुलाव के लिए सब्ज़ी काटकर, पनीर तैयार रखें।","ಶನಿವಾರ: ಭಾನುವಾರ ಪಲಾವ್‌ಗೆ ತರಕಾರಿ ಕತ್ತರಿಸಿ, ಪನೀರ್ ಸಿದ್ಧವಿಡಿ.")];
 const RULES=[L("Squeeze lemon on dal or sabzi at lunch and dinner. It helps absorb iron.","Lunch aur dinner mein dal ya sabzi par nimbu. Isse iron achhe se lagta hai.","लंच और डिनर में दाल या सब्ज़ी पर नींबू। इससे आयरन अच्छे से मिलता है।","ಊಟ ಮತ್ತು ರಾತ್ರಿ ಬೇಳೆ ಅಥವಾ ಪಲ್ಯಕ್ಕೆ ನಿಂಬೆ. ಕಬ್ಬಿಣ ಹೀರಲು ಸಹಾಯ."),
  L("Tea or coffee at least 1 hour away from meals, and none after 2 pm.","Chai-coffee khaane se 1 ghanta door, aur 2 baje ke baad nahi.","चाय-कॉफ़ी खाने से 1 घंटा दूर, और 2 बजे के बाद नहीं।","ಚಹಾ-ಕಾಫಿ ಊಟದಿಂದ 1 ಗಂಟೆ ದೂರ, 2 ಗಂಟೆಯ ನಂತರ ಬೇಡ."),
@@ -379,18 +399,18 @@ const SHOP={
  sun:{title:L("Sunday shopping","Ravivaar ki shopping","रविवार की खरीदारी","ಭಾನುವಾರದ ಖರೀದಿ"),tab:L("Sun list","Ravi list","रवि सूची","ಭಾನು ಪಟ್ಟಿ"),
   sub:L("Fresh items for Monday to Wednesday, plus a pantry check","Somvaar se Budhvaar ka taaza saaman, aur pantry check","सोमवार से बुधवार का ताज़ा सामान, और पेंट्री जांच","ಸೋಮವಾರದಿಂದ ಬುಧವಾರದ ತಾಜಾ ವಸ್ತು, ಮತ್ತು ಪ್ಯಾಂಟ್ರಿ ಪರಿಶೀಲನೆ"),
   groups:[
-   {h:L("Fresh","Taaza","ताज़ा","ತಾಜಾ"),items:[[I.egg,"10"],[I.paneer,"150 g"],[I.tofu,L("1 pack (200 g)","1 pack (200 g)","1 पैक (200 ग्राम)","1 ಪ್ಯಾಕ್ (200 ಗ್ರಾಂ)")],
-    [I.curd,"500 g"],[I.milk,"1.35 L"],[I.palak,"450 g"],[I.veg,"300 g"],[I.cucumber,"200 g"],[I.tomato,"6 (~450 g)"],[I.capsicum,"1"],[I.lemon,"3"],
+   {h:L("Fresh","Taaza","ताज़ा","ತಾಜಾ"),items:[[I.egg,"13"],[I.paneer,"150 g"],
+    [I.curd,"500 g"],[I.milk,"1.35 L"],[I.palak,"450 g"],[I.veg,"350 g"],[I.cucumber,"200 g"],[I.tomato,"6 (~450 g)"],[I.capsicum,"1"],[I.lemon,"3"],
     [I.chilli,"50 g"],[I.coriander,L("1 bunch","1 gaddi","1 गड्डी","1 ಕಟ್ಟು")],[I.ginger,"50 g"],[I.garlic,L("1 bulb","1 gaanth","1 गांठ","1 ಗಡ್ಡೆ")],[X.fruit,"3"]]},
    {h:L("Pantry: check stock, top up what's low","Pantry: stock dekho, jo kam ho wo lo","पेंट्री: स्टॉक देखें, जो कम हो वो लें","ಪ್ಯಾಂಟ್ರಿ: ಸ್ಟಾಕ್ ನೋಡಿ, ಕಡಿಮೆ ಇದ್ದದ್ದು ತನ್ನಿ"),note:L("weekly use","hafte ki khapat","हफ्ते की खपत","ವಾರದ ಬಳಕೆ"),items:[
-    [I.onion,"1.5 kg"],[I.atta,"330 g"],[I.rice,"240 g"],[I.moong,"160 g"],[I.toor,"160 g"],[I.rajma,"50 g"],[I.lobia,"50 g"],[I.besan,"40 g"],[I.ragi,"40 g"],
-    [I.poha,"50 g"],[I.oats,"90 g"],[I.soya,"50 g"],[X.frozenPeas,"150 g"],[I.peanut,"15 g"],[I.walnut,"105 g"],[I.flax,"70 g"],[I.coffee,"~100 g"],[I.jaggery,"~35 g"],
+    [I.onion,"1.5 kg"],[I.atta,"330 g"],[I.rice,"240 g"],[I.moong,"200 g"],[I.toor,"120 g"],[I.rajma,"50 g"],[I.kabuli,"50 g"],[I.kalachana,"50 g"],[I.besan,"40 g"],[I.ragi,"40 g"],
+    [I.poha,"50 g"],[I.daliya,"35 g"],[I.vermicelli,"70 g"],[I.soya,"50 g"],[I.cholemasala,"—"],[X.frozenPeas,"150 g"],[I.peanut,"15 g"],[I.walnut,"105 g"],[I.flax,"70 g"],[I.coffee,"~100 g"],[I.jaggery,"~35 g"],
     [I.whey,L("7 scoops","7 scoop","7 स्कूप","7 ಸ್ಕೂಪ್")],[I.ghee,"~40 g"],[I.gg,L("1 small jar","1 chhota jar","1 छोटा जार","1 ಸಣ್ಣ ಜಾರ್")],[I.oil,"~120 ml"],[I.wholespice,"—"],[X.spices,"—"]]}]},
  wed:{title:L("Wednesday shopping","Budhvaar ki shopping","बुधवार की खरीदारी","ಬುಧವಾರದ ಖರೀದಿ"),tab:L("Wed list","Budh list","बुध सूची","ಬುಧ ಪಟ್ಟಿ"),
   sub:L("Fresh items for Thursday to Sunday, plus Wednesday's chicken","Guruvaar se Ravivaar ka taaza saaman, aur Budhvaar ka chicken","गुरुवार से रविवार का ताज़ा सामान, और बुधवार का चिकन","ಗುರುವಾರದಿಂದ ಭಾನುವಾರದ ತಾಜಾ ವಸ್ತು, ಮತ್ತು ಬುಧವಾರದ ಚಿಕನ್"),
   groups:[
-   {h:L("Fresh","Taaza","ताज़ा","ತಾಜಾ"),items:[[I.chicken,L("150 g (Wednesday, cook the same day)","150 g (Budhvaar, usi din banao)","150 ग्राम (बुधवार, उसी दिन बनाएं)","150 ಗ್ರಾಂ (ಬುಧವಾರ, ಅದೇ ದಿನ ಬೇಯಿಸಿ)")],[I.egg,"15"],[I.paneer,"200 g"],[I.tofu,L("1 pack (200 g)","1 pack (200 g)","1 पैक (200 ग्राम)","1 ಪ್ಯಾಕ್ (200 ಗ್ರಾಂ)")],
-    [I.curd,"500 g"],[I.milk,"1.8 L"],[I.palak,"400 g"],[I.veg,"300 g"],[I.cucumber,"250 g"],[I.tomato,"8 (~600 g)"],[I.capsicum,"2"],[I.carrot,"1"],[I.beet,L("1 small","1 chhota","1 छोटा","1 ಸಣ್ಣ")],
+   {h:L("Fresh","Taaza","ताज़ा","ತಾಜಾ"),items:[[I.chicken,L("150 g (Wednesday, cook the same day)","150 g (Budhvaar, usi din banao)","150 ग्राम (बुधवार, उसी दिन बनाएं)","150 ಗ್ರಾಂ (ಬುಧವಾರ, ಅದೇ ದಿನ ಬೇಯಿಸಿ)")],[I.egg,"15"],[I.paneer,"200 g"],
+    [I.curd,"500 g"],[I.milk,"1.8 L"],[I.palak,"400 g"],[I.veg,"400 g"],[I.cucumber,"250 g"],[I.tomato,"8 (~600 g)"],[I.capsicum,"2"],[I.carrot,"1"],[I.beet,L("1 small","1 chhota","1 छोटा","1 ಸಣ್ಣ")],
     [I.lemon,"3"],[I.curryleaf,L("1 bunch","1 gaddi","1 गड्डी","1 ಕಟ್ಟು")],[X.fruit,"4"]]},
    {h:L("Saturday morning","Shanivaar subah","शनिवार सुबह","ಶನಿವಾರ ಬೆಳಿಗ್ಗೆ"),items:[[I.chicken,L("150 g (cook the same day)","150 g (usi din banao)","150 ग्राम (उसी दिन बनाएं)","150 ಗ್ರಾಂ (ಅದೇ ದಿನ ಬೇಯಿಸಿ)")]]}]},
 };
