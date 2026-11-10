@@ -70,6 +70,17 @@ th{font:600 11px var(--body);text-transform:uppercase;letter-spacing:.08em;color
 td.num{font-variant-numeric:tabular-nums;font-weight:600;color:var(--haldi);white-space:nowrap}
 .printall section.dayblock{break-before:page;padding-top:8px}
 .printall .mealblock h4{font-family:var(--display);font-size:18px;margin:16px 0 8px;color:var(--haldi)}
+.shop{display:grid;gap:14px;margin-top:14px}
+.shop .box h3{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.shop .box h3 small{font:500 12px var(--body);color:var(--muted)}
+ul.chk{list-style:none;margin:0;padding:0;columns:2 260px;column-gap:28px}
+ul.chk li{break-inside:avoid;border-bottom:1px dashed var(--line)}
+ul.chk label{display:flex;gap:10px;align-items:baseline;padding:7px 0;cursor:pointer;font-size:14px}
+ul.chk input{width:17px;height:17px;accent-color:var(--leaf);flex:0 0 auto;transform:translateY(3px)}
+ul.chk .q{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:600;color:var(--haldi);white-space:nowrap;padding-left:8px}
+ul.chk input:checked~span{text-decoration:line-through;color:var(--muted)}
+.shopnotes{font-size:13px;color:var(--muted);margin:0;padding-left:18px;display:grid;gap:3px}
+.clear{border:1px solid var(--line);background:var(--surface);color:var(--fg);font:600 13px var(--body);padding:7px 12px;border-radius:8px;cursor:pointer}
 @media (max-width:640px){.dish{grid-template-columns:1fr}}
 @media print{nav.days,.langs,.meals{display:none!important}.dish,.box{break-inside:avoid}body{font-size:12px}}
 </style>
@@ -338,6 +349,40 @@ const RULES=[L("Measure oil with a teaspoon, never pour from the bottle.","Tel c
  L("Weigh paneer, chicken, dal and rice raw.","Paneer, chicken, dal, chawal kachche taulo.","पनीर, चिकन, दाल, चावल कच्चे तौलें।","ಪನೀರ್, ಚಿಕನ್, ಬೇಳೆ, ಅಕ್ಕಿ ಹಸಿಯಾಗಿ ತೂಕ ಮಾಡಿ."),
  L("Hungry? Add more salad or sabzi, not more roti or rice.","Bhookh lage to salad ya sabzi badhao, roti-chawal nahi.","भूख लगे तो सलाद या सब्ज़ी बढ़ाएं, रोटी-चावल नहीं।","ಹಸಿವಾದರೆ ಸಲಾಡ್ ಅಥವಾ ಪಲ್ಯ ಹೆಚ್ಚಿಸಿ, ರೊಟ್ಟಿ-ಅನ್ನ ಅಲ್ಲ.")];
 
+
+/* ---------- shopping lists ---------- */
+const X={fruit:L("Fruit: orange, guava or amla","Phal: santra, amrood ya amla","फल: संतरा, अमरूद या आंवला","ಹಣ್ಣು: ಕಿತ್ತಳೆ, ಸೀಬೆ ಅಥವಾ ನೆಲ್ಲಿಕಾಯಿ"),
+ papaya:L("Papaya or apple (Saturday breakfast)","Papita ya seb (Shanivaar nashta)","पपीता या सेब (शनिवार नाश्ता)","ಪಪ್ಪಾಯಿ ಅಥವಾ ಸೇಬು (ಶನಿವಾರ ತಿಂಡಿ)"),
+ frozenPeas:L("Frozen peas","Frozen matar","फ्रोज़न मटर","ಫ್ರೋಜನ್ ಬಟಾಣಿ"),
+ nuts:L("Almonds / walnuts","Badaam / akhrot","बादाम / अखरोट","ಬಾದಾಮಿ / ಅಕ್ರೋಟ್"),
+ spices:L("Spices: haldi, jeera, rai, ajwain, chilli powder, garam masala, black pepper","Masale: haldi, jeera, rai, ajwain, laal mirch, garam masala, kaali mirch","मसाले: हल्दी, जीरा, राई, अजवाइन, लाल मिर्च, गरम मसाला, काली मिर्च","ಮಸಾಲೆ: ಅರಿಶಿನ, ಜೀರಿಗೆ, ಸಾಸಿವೆ, ಓಂಕಾಳು, ಮೆಣಸಿನ ಪುಡಿ, ಗರಂ ಮಸಾಲಾ, ಕಾಳುಮೆಣಸು")};
+const P=(n)=>L(`${n} pcs`,`${n}`,`${n}`,`${n}`);
+const SHOP={
+ sun:{title:L("Sunday shopping","Ravivaar ki shopping","रविवार की खरीदारी","ಭಾನುವಾರದ ಖರೀದಿ"),tab:L("Sun list","Ravi list","रवि सूची","ಭಾನು ಪಟ್ಟಿ"),
+  sub:L("Fresh items for Monday to Wednesday, plus a pantry check","Somvaar se Budhvaar ka taaza saaman, aur pantry check","सोमवार से बुधवार का ताज़ा सामान, और पेंट्री जांच","ಸೋಮವಾರದಿಂದ ಬುಧವಾರದ ತಾಜಾ ವಸ್ತು, ಮತ್ತು ಪ್ಯಾಂಟ್ರಿ ಪರಿಶೀಲನೆ"),
+  groups:[
+   {h:L("Fresh","Taaza","ताज़ा","ತಾಜಾ"),items:[[I.egg,"10"],[I.paneer,"150 g"],[I.tofu,L("1 pack (200 g)","1 pack (200 g)","1 पैक (200 ग्राम)","1 ಪ್ಯಾಕ್ (200 ಗ್ರಾಂ)")],[I.chicken,L("300 g (half frozen for Saturday)","300 g (aadha Shanivaar ke liye freeze)","300 ग्राम (आधा शनिवार के लिए फ्रीज़)","300 ಗ್ರಾಂ (ಅರ್ಧ ಶನಿವಾರಕ್ಕೆ ಫ್ರೀಜ್)")],
+    [I.curd,"1 kg"],[I.palak,"250 g"],[I.veg,"300 g"],[I.cucumber,"200 g"],[I.tomato,"8 (~600 g)"],[I.capsicum,"1"],[I.lemon,"2"],
+    [I.chilli,"50 g"],[I.coriander,L("1 bunch","1 gaddi","1 गड्डी","1 ಕಟ್ಟು")],[I.ginger,"50 g"],[I.garlic,L("1 bulb","1 gaanth","1 गांठ","1 ಗಡ್ಡೆ")],[X.fruit,"3"],[I.banana,"3"]]},
+   {h:L("Pantry: check stock, top up what's low","Pantry: stock dekho, jo kam ho wo lo","पेंट्री: स्टॉक देखें, जो कम हो वो लें","ಪ್ಯಾಂಟ್ರಿ: ಸ್ಟಾಕ್ ನೋಡಿ, ಕಡಿಮೆ ಇದ್ದದ್ದು ತನ್ನಿ"),note:L("weekly use","hafte ki khapat","हफ्ते की खपत","ವಾರದ ಬಳಕೆ"),items:[
+    [I.onion,"1.5 kg"],[I.atta,"360 g"],[I.rice,"220 g"],[I.moong,"140 g"],[I.toor,"120 g"],[I.rajma,"50 g"],[I.lobia,"50 g"],[I.besan,"40 g"],[I.ragi,"40 g"],
+    [I.poha,"50 g"],[I.oats,"70 g"],[I.soya,"100 g"],[I.granules,"50 g"],[X.frozenPeas,"150 g"],[I.peanut,"15 g"],[X.nuts,"105 g"],[I.seeds,"80 g"],
+    [I.whey,L("8 scoops","8 scoop","8 स्कूप","8 ಸ್ಕೂಪ್")],[I.gg,L("1 small jar","1 chhota jar","1 छोटा जार","1 ಸಣ್ಣ ಜಾರ್")],[I.oil,L("~150 ml","~150 ml","~150 ml","~150 ml")],[X.spices,"—"]]}]},
+ wed:{title:L("Wednesday shopping","Budhvaar ki shopping","बुधवार की खरीदारी","ಬುಧವಾರದ ಖರೀದಿ"),tab:L("Wed list","Budh list","बुध सूची","ಬುಧ ಪಟ್ಟಿ"),
+  sub:L("Fresh items for Thursday to Sunday","Guruvaar se Ravivaar ka taaza saaman","गुरुवार से रविवार का ताज़ा सामान","ಗುರುವಾರದಿಂದ ಭಾನುವಾರದ ತಾಜಾ ವಸ್ತು"),
+  groups:[
+   {h:L("Fresh","Taaza","ताज़ा","ತಾಜಾ"),items:[[I.egg,"13"],[I.paneer,"275 g"],[I.tofu,L("1 pack (200 g)","1 pack (200 g)","1 पैक (200 ग्राम)","1 ಪ್ಯಾಕ್ (200 ಗ್ರಾಂ)")],
+    [I.curd,"1 kg"],[I.palak,"400 g"],[I.veg,"100 g"],[I.cucumber,"150 g"],[I.tomato,"8 (~600 g)"],[I.capsicum,"3"],[I.carrot,"1"],[I.beet,L("1 small","1 chhota","1 छोटा","1 ಸಣ್ಣ")],
+    [I.lemon,"3"],[I.curryleaf,L("1 bunch","1 gaddi","1 गड्डी","1 ಕಟ್ಟು")],[X.fruit,"4"],[X.papaya,"1"],[I.banana,"5"]]}]},
+};
+const SHOPNOTES=[L("Eggs keep 2–3 weeks in the fridge, so a 30-egg tray once every 10 days also works.","Ande fridge mein 2–3 hafte chalte hain, 10 din mein ek 30-ande ki tray bhi chalegi.","अंडे फ्रिज में 2–3 हफ्ते चलते हैं, 10 दिन में एक 30 अंडे की ट्रे भी चलेगी।","ಮೊಟ್ಟೆ ಫ್ರಿಜ್‌ನಲ್ಲಿ 2–3 ವಾರ ಇರುತ್ತದೆ, 10 ದಿನಕ್ಕೊಮ್ಮೆ 30 ಮೊಟ್ಟೆ ಟ್ರೇ ಕೂಡ ಸಾಕು."),
+ L("Chicken: buy 300 g on Sunday, marinate and freeze half in a 150 g pack for Saturday.","Chicken: Ravivaar 300 g lo, marinate karke aadha 150 g pack Shanivaar ke liye freeze karo.","चिकन: रविवार 300 ग्राम लें, मैरिनेट करके आधा 150 ग्राम पैक शनिवार के लिए फ्रीज़ करें।","ಚಿಕನ್: ಭಾನುವಾರ 300 ಗ್ರಾಂ ತನ್ನಿ, ಮ್ಯಾರಿನೇಟ್ ಮಾಡಿ ಅರ್ಧ 150 ಗ್ರಾಂ ಶನಿವಾರಕ್ಕೆ ಫ್ರೀಜ್ ಮಾಡಿ."),
+ L("Dry pantry items last weeks. Buy the smallest pack and refill only when it runs low.","Sukha saaman hafton chalta hai. Chhota pack lo, khatam hone par hi bharo.","सूखा सामान हफ्तों चलता है। छोटा पैक लें, खत्म होने पर ही भरें।","ಒಣ ವಸ್ತು ವಾರಗಟ್ಟಲೆ ಇರುತ್ತದೆ. ಸಣ್ಣ ಪ್ಯಾಕ್ ತನ್ನಿ, ಮುಗಿದಾಗ ಮಾತ್ರ ತುಂಬಿಸಿ.")];
+let ticks={};try{ticks=JSON.parse(localStorage.getItem("kp-ticks")||"{}")}catch(e){}
+function shopView(k){const sh=SHOP[k];
+ return `<div class="dayhead"><h2>${esc(t(sh.title))}</h2></div><p class="sub" style="margin:0">${esc(t(sh.sub))}</p><div class="shop">${sh.groups.map((g,gi)=>`<div class="box"><h3>${esc(t(g.h))}${g.note?`<small>${esc(t(g.note))}</small>`:""}</h3><ul class="chk">${g.items.map(([it,qt],ii)=>{const id=`chk-${k}-${gi}-${ii}`;return `<li><label for="${id}"><input type="checkbox" id="${id}" data-tick="${id}" ${ticks[id]?"checked":""}><span>${esc(t(it))}</span><span class="q">${esc(t(qt))}</span></label></li>`}).join("")}</ul></div>`).join("")}
+ <div class="box"><ul class="shopnotes">${SHOPNOTES.map(n=>`<li>${esc(t(n))}</li>`).join("")}</ul></div>
+ ${PRINT?"":`<div><button class="clear" data-clear="${k}">${esc(t(L("Clear ticks","Tick hatao","टिक हटाएं","ಟಿಕ್ ತೆಗೆಯಿರಿ")))}</button></div>`}</div>`}
 /* ---------- rendering ---------- */
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let state={day:"mon",meal:"B"};
@@ -367,17 +412,17 @@ function summaryView(){
 }
 function allView(){
   return `<div class="printall">${DAYS.map(d=>`<section class="dayblock">${dayHead(d)}${MEALS.map(([k,n,tm])=>`<div class="mealblock"><h4>${esc(t(n))} · <span style="font-weight:400;font-size:14px;color:var(--muted)">${esc(t(tm))}</span></h4><div class="dishes">${d[k].map(dishHTML).join("")}</div></div>`).join("")}</section>`).join("")}
-  <section class="dayblock">${dailyView()}</section><section class="dayblock">${summaryView()}</section></div>`;
+  <section class="dayblock">${dailyView()}</section><section class="dayblock">${summaryView()}</section><section class="dayblock">${shopView("sun")}</section><section class="dayblock">${shopView("wed")}</section></div>`;
 }
 function render(){
   document.documentElement.lang=lang==="hl"?"hi-Latn":lang;
-  const tabs=[...DAYS.map(d=>[d.id,t(d.s),""]),["sep"],["daily",t(TXT.daily),t(TXT.dailyS)],["summary",t(TXT.summary),t(TXT.summaryS)],["all",t(TXT.all),t(TXT.allS)]];
+  const tabs=[...DAYS.map(d=>[d.id,t(d.s),""]),["sep"],["daily",t(TXT.daily),t(TXT.dailyS)],["summary",t(TXT.summary),t(TXT.summaryS)],["sun-shop",t(SHOP.sun.tab),t(L("Mon–Wed","Som–Budh","सोम–बुध","ಸೋಮ–ಬುಧ"))],["wed-shop",t(SHOP.wed.tab),t(L("Thu–Sun","Guru–Ravi","गुरु–रवि","ಗುರು–ಭಾನು"))],["all",t(TXT.all),t(TXT.allS)]];
   const day=DAYS.find(d=>d.id===state.day);
-  const body=day?dayView(day):state.day==="daily"?dailyView():state.day==="summary"?summaryView():allView();
+  const body=day?dayView(day):state.day==="daily"?dailyView():state.day==="summary"?summaryView():state.day==="sun-shop"?shopView("sun"):state.day==="wed-shop"?shopView("wed"):allView();
   document.getElementById("app").innerHTML=`
   <header class="top"><div><h1>Chandan's Kitchen Plan</h1><p class="sub">${esc(t(TXT.sub))}</p></div>
   ${PRINT?"":`<div class="langs" role="group" aria-label="Language">${LANGS.map(([k,n])=>`<button data-lang="${k}" aria-pressed="${lang===k}">${n}</button>`).join("")}</div>`}</header>
-  ${PRINT?"":`<nav class="days" role="tablist">${tabs.map(x=>x[0]==="sep"?`<span class="sep"></span>`:`<button role="tab" data-day="${x[0]}" aria-selected="${state.day===x[0]}">${esc(x[1])}${x[0]==="daily"||x[0]==="summary"||x[0]==="all"?`<small>${esc(x[2])}</small>`:`<small>${esc(t(DAYS.find(d=>d.id===x[0]).cook?TXT.cookDay:TXT.selfDay).split("·")[0].trim())}</small>`}</button>`).join("")}</nav>`}
+  ${PRINT?"":`<nav class="days" role="tablist">${tabs.map(x=>x[0]==="sep"?`<span class="sep"></span>`:`<button role="tab" data-day="${x[0]}" aria-selected="${state.day===x[0]}">${esc(x[1])}${!DAYS.find(d=>d.id===x[0])?`<small>${esc(x[2])}</small>`:`<small>${esc(t(DAYS.find(d=>d.id===x[0]).cook?TXT.cookDay:TXT.selfDay).split("·")[0].trim())}</small>`}</button>`).join("")}</nav>`}
   ${body}`;
   try{localStorage.setItem("kp-state",JSON.stringify(state));localStorage.setItem("kp-lang",lang)}catch(e){}
 }
@@ -386,6 +431,8 @@ document.addEventListener("click",e=>{
   if(b.dataset.lang){lang=b.dataset.lang;render()}
   else if(b.dataset.day){state.day=b.dataset.day;render()}
   else if(b.dataset.meal){state.meal=b.dataset.meal;render()}
+  else if(b.dataset.clear){Object.keys(ticks).forEach(k=>{if(k.startsWith("chk-"+b.dataset.clear))delete ticks[k]});try{localStorage.setItem("kp-ticks",JSON.stringify(ticks))}catch(e){}render()}
 });
+document.addEventListener("change",e=>{const c=e.target.closest("[data-tick]");if(!c)return;if(c.checked)ticks[c.dataset.tick]=1;else delete ticks[c.dataset.tick];try{localStorage.setItem("kp-ticks",JSON.stringify(ticks))}catch(e){}});
 render();
 </script>
