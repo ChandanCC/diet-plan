@@ -115,7 +115,7 @@ soya:L("Soya chunks (dry)","Soya chunks (sukhe)","सोया चंक्स (
 tofu:L("Tofu (firm)","Tofu","टोफू","ಟೋಫು"),veg:L("Mixed veg (beans, carrot, cabbage)","Mix sabzi (beans, gajar, patta gobhi)","मिक्स सब्ज़ी (बीन्स, गाजर, पत्ता गोभी)","ಮಿಶ್ರ ತರಕಾರಿ (ಬೀನ್ಸ್, ಕ್ಯಾರೆಟ್, ಎಲೆಕೋಸು)"),
 toor:L("Toor / mixed dal","Toor / mix dal","तूर / मिक्स दाल","ತೊಗರಿ / ಮಿಶ್ರ ಬೇಳೆ"),masala:L("Salt, chilli powder, garam masala","Namak, laal mirch, garam masala","नमक, लाल मिर्च, गरम मसाला","ಉಪ್ಪು, ಮೆಣಸಿನ ಪುಡಿ, ಗರಂ ಮಸಾಲಾ"),
 salt:L("Salt","Namak","नमक","ಉಪ್ಪು"),pepper:L("Black pepper","Kaali mirch","काली मिर्च","ಕಾಳುಮೆಣಸು"),ajwain:L("Ajwain","Ajwain","अजवाइन","ಓಂಕಾಳು"),
-water:L("Water","Paani","पानी","ನೀರು"),ghee:L("Ghee","Ghee","घी","ತುಪ್ಪ"),wholespice:L("Bay leaf + 2 cloves","Tej patta + 2 laung","तेज पत्ता + 2 लौंग","ಪಲಾವ್ ಎಲೆ + 2 ಲವಂಗ"),tbspcurd:L("Curd for marinade","Marinade ke liye dahi","मैरिनेड के लिए दही","ಮ್ಯಾರಿನೇಡ್‌ಗೆ ಮೊಸರು"),
+water:L("Water","Paani","पानी","ನೀರು"),ghee:L("Ghee","Ghee","घी","ತುಪ್ಪ"),flax:L("Ground flaxseed","Pisi alsi","पिसी अलसी","ಅಗಸೆ ಬೀಜದ ಪುಡಿ"),walnut:L("Walnuts","Akhrot","अखरोट","ಅಕ್ರೋಟ್"),coffee:L("Filter coffee powder","Filter coffee powder","फ़िल्टर कॉफ़ी पाउडर","ಫಿಲ್ಟರ್ ಕಾಫಿ ಪುಡಿ"),jaggery:L("Jaggery","Gud","गुड़","ಬೆಲ್ಲ"),wholespice:L("Bay leaf + 2 cloves","Tej patta + 2 laung","तेज पत्ता + 2 लौंग","ಪಲಾವ್ ಎಲೆ + 2 ಲವಂಗ"),tbspcurd:L("Curd for marinade","Marinade ke liye dahi","मैरिनेड के लिए दही","ಮ್ಯಾರಿನೇಡ್‌ಗೆ ಮೊಸರು"),
 };
 const U={half:L("½","½","½","½"),small:L("1 small","1 chhota","1 छोटा","1 ಸಣ್ಣ"),pinch:L("pinch","chutki","चुटकी","ಚಿಟಿಕೆ"),taste:L("to taste","swaad anusaar","स्वादानुसार","ರುಚಿಗೆ"),few:L("8–10","8–10","8–10","8–10"),scoop:L("1 scoop","1 scoop","1 स्कूप","1 ಸ್ಕೂಪ್")};
 const q=x=>x;
@@ -143,15 +143,15 @@ S.boiled=n=>({name:L(`Boiled eggs × ${n}`,`Ubale ande × ${n}`,`उबले �
 S.curd={name:L("Curd","Dahi","दही","ಮೊಸರು"),pro:"~5 g",ing:[["150 g",I.curd]],
  steps:[L("Take out of the fridge 30 min before. Add roasted jeera and a pinch of salt. No sugar.","30 min pehle fridge se nikaalo. Bhuna jeera, chutki namak. Cheeni nahi.","30 मिनट पहले फ्रिज से निकालें। भुना जीरा, चुटकी नमक। चीनी नहीं।","30 ನಿಮಿಷ ಮೊದಲು ಫ್ರಿಜ್‌ನಿಂದ ತೆಗೆಯಿರಿ. ಹುರಿದ ಜೀರಿಗೆ, ಚಿಟಿಕೆ ಉಪ್ಪು. ಸಕ್ಕರೆ ಬೇಡ.")]};
 S.dal=(key,nm)=>({name:nm,pro:"~9 g",
- ing:[["40 g",I[key]],[q(U.pinch),I.haldi],["1 tsp",I.ghee],["½ tsp",I.jeera],["2",I.garlic],[q(U.taste),I.salt]],
+ ing:[["40 g",I[key]],[q(U.pinch),I.haldi],["1 tsp",I.ghee],["½ tsp",I.jeera],["2",I.garlic],["½",I.lemon],[q(U.taste),I.salt]],
  steps:[L("Wash dal. Pressure cook with 1½ cups water, turmeric and salt, 3 whistles.","Dal dho ke 1½ cup paani, haldi, namak ke saath 3 seeti.","दाल धोकर 1½ कप पानी, हल्दी, नमक के साथ 3 सीटी।","ಬೇಳೆ ತೊಳೆದು 1½ ಕಪ್ ನೀರು, ಅರಿಶಿನ, ಉಪ್ಪು ಹಾಕಿ 3 ವಿಸಿಲ್."),
   L("Tadka: 1 tsp ghee, jeera, chopped garlic. Pour over dal.","Tadka: 1 tsp ghee, jeera, lehsun. Dal par daalo.","तड़का: 1 चम्मच घी, जीरा, लहसुन। दाल पर डालें।","ಒಗ್ಗರಣೆ: 1 ಚಮಚ ತುಪ್ಪ, ಜೀರಿಗೆ, ಬೆಳ್ಳುಳ್ಳಿ. ಬೇಳೆಗೆ ಹಾಕಿ."),
-  L("Keep it medium thick.","Medium gaadha rakho.","मध्यम गाढ़ी रखें।","ಮಧ್ಯಮ ದಪ್ಪ ಇರಲಿ.")]});
+  L("Keep it medium thick. Squeeze ½ lemon over it just before serving.","Medium gaadha rakho. Dene se pehle ½ nimbu nichodo.","मध्यम गाढ़ी रखें। परोसने से पहले ½ नींबू निचोड़ें।","ಮಧ್ಯಮ ದಪ್ಪ ಇರಲಿ. ಕೊಡುವ ಮೊದಲು ½ ನಿಂಬೆ ಹಿಂಡಿ.")]});
 S.palak={name:L("Palak sabzi","Palak sabzi","पालक सब्ज़ी","ಪಾಲಕ್ ಪಲ್ಯ"),pro:"~5 g",
- ing:[["200 g",I.palak],["3",I.garlic],["1 tsp",I.oil],[q(U.taste),I.salt]],
+ ing:[["200 g",I.palak],["3",I.garlic],["1 tsp",I.oil],["½",I.lemon],[q(U.taste),I.salt]],
  steps:[L("Wash well and chop.","Achhe se dho ke kaato.","अच्छे से धोकर काटें।","ಚೆನ್ನಾಗಿ ತೊಳೆದು ಕತ್ತರಿಸಿ."),
   L("Fry garlic in 1 tsp oil, add palak and salt.","1 tsp tel mein lehsun, phir palak aur namak.","1 चम्मच तेल में लहसुन, फिर पालक और नमक।","1 ಚಮಚ ಎಣ್ಣೆಯಲ್ಲಿ ಬೆಳ್ಳುಳ್ಳಿ, ನಂತರ ಪಾಲಕ್, ಉಪ್ಪು."),
-  L("Cook 5 minutes without lid.","Bina dhakkan 5 minute pakao.","बिना ढक्कन 5 मिनट पकाएं।","ಮುಚ್ಚಳವಿಲ್ಲದೆ 5 ನಿಮಿಷ ಬೇಯಿಸಿ.")]};
+  L("Cook 5 minutes without lid. Squeeze ½ lemon on top when serving.","Bina dhakkan 5 minute pakao. Dete waqt ½ nimbu nichodo.","बिना ढक्कन 5 मिनट पकाएं। परोसते समय ½ नींबू निचोड़ें।","ಮುಚ್ಚಳವಿಲ್ಲದೆ 5 ನಿಮಿಷ ಬೇಯಿಸಿ. ಕೊಡುವಾಗ ½ ನಿಂಬೆ ಹಿಂಡಿ.")]};
 S.mixveg={name:L("Mixed veg sabzi","Mix veg sabzi","मिक्स वेज सब्ज़ी","ಮಿಶ್ರ ತರಕಾರಿ ಪಲ್ಯ"),pro:"~3 g",
  ing:[["150 g",I.veg],["1 tsp",I.oil],["½ tsp",I.jeera],[q(U.pinch),I.haldi],[q(U.taste),I.salt]],
  steps:[L("Chop veg small.","Sabzi chhoti kaato.","सब्ज़ी छोटी काटें।","ತರಕಾರಿ ಸಣ್ಣಗೆ ಕತ್ತರಿಸಿ."),
@@ -312,9 +312,13 @@ const MEALS=[["B",L("Breakfast","Nashta","नाश्ता","ಬೆಳಗಿ�
 /* ---------- daily fixed + summary ---------- */
 const DAILY=[
  {name:L("Morning: nuts + seeds","Subah: dry fruits + seeds","सुबह: मेवे + बीज","ಬೆಳಿಗ್ಗೆ: ಒಣಹಣ್ಣು + ಬೀಜ"),pro:"~6 g",
-  ing:[["15 g",L("Almonds or walnuts (4–5), soaked overnight","Badaam ya akhrot (4–5), raat bhar bhige","बादाम या अखरोट (4–5), रात भर भीगे","ಬಾದಾಮಿ ಅಥವಾ ಅಕ್ರೋಟ್ (4–5), ರಾತ್ರಿ ನೆನೆಸಿದ")],["10 g",I.seeds]],
+  ing:[["15 g",L("Walnuts (4–5 halves), soaked overnight","Akhrot (4–5), raat bhar bhige","अखरोट (4–5), रात भर भीगे","ಅಕ್ರೋಟ್ (4–5), ರಾತ್ರಿ ನೆನೆಸಿದ")],["10 g",I.flax]],
   steps:[L("Eat the soaked nuts on waking. Add seeds to breakfast.","Bhige badaam uthte hi khao. Seeds nashte mein.","भीगे बादाम उठते ही खाएं। बीज नाश्ते में।","ನೆನೆಸಿದ ಬಾದಾಮಿ ಎದ್ದ ತಕ್ಷಣ ತಿನ್ನಿ. ಬೀಜ ತಿಂಡಿಗೆ.")]},
- {name:L("11 am: one fruit, on its own","11 baje: ek phal, akele","11 बजे: एक फल, अकेले","11 ಗಂಟೆ: ಒಂದು ಹಣ್ಣು, ಒಂಟಿಯಾಗಿ"),
+ {name:L("10:30 am: filter coffee","10:30 baje: filter coffee","10:30 बजे: फ़िल्टर कॉफ़ी","10:30: ಫಿಲ್ಟರ್ ಕಾಫಿ"),pro:"~8 g",
+  ing:[["250 ml",I.milk],["2 tsp",I.coffee],["1 tsp",I.jaggery]],
+  steps:[L("Brew the decoction, add to hot milk, stir in jaggery.","Decoction banao, garam doodh mein milao, gud daalo.","डिकॉक्शन बनाएं, गरम दूध में मिलाएं, गुड़ डालें।","ಡಿಕಾಕ್ಷನ್ ಮಾಡಿ, ಬಿಸಿ ಹಾಲಿಗೆ ಸೇರಿಸಿ, ಬೆಲ್ಲ ಹಾಕಿ."),
+   L("Only one cup, at least 1 hour after breakfast. No coffee or tea after 2 pm.","Sirf ek cup, nashte ke 1 ghante baad. 2 baje ke baad chai-coffee nahi.","सिर्फ एक कप, नाश्ते के 1 घंटे बाद। 2 बजे के बाद चाय-कॉफ़ी नहीं।","ಒಂದೇ ಕಪ್, ತಿಂಡಿಯ 1 ಗಂಟೆ ನಂತರ. 2 ಗಂಟೆಯ ನಂತರ ಚಹಾ-ಕಾಫಿ ಬೇಡ.")]},
+ {name:L("11:30 am: one fruit, on its own","11:30 baje: ek phal, akele","11:30 बजे: एक फल, अकेले","11:30: ಒಂದು ಹಣ್ಣು, ಒಂಟಿಯಾಗಿ"),
   ing:[["1",L("Orange, guava or amla","Santra, amrood ya amla","संतरा, अमरूद या आंवला","ಕಿತ್ತಳೆ, ಸೀಬೆ ಅಥವಾ ನೆಲ್ಲಿಕಾಯಿ")]],
   steps:[L("Fruit alone, never with a meal. The vitamin C also helps you absorb iron from dal and palak.","Phal akele, khaane ke saath nahi. Isse dal-palak ka iron bhi achhe se lagta hai.","फल अकेले, खाने के साथ नहीं। इससे दाल-पालक का आयरन भी अच्छे से मिलता है।","ಹಣ್ಣು ಒಂಟಿಯಾಗಿ, ಊಟದ ಜೊತೆ ಬೇಡ. ಬೇಳೆ-ಪಾಲಕ್‌ನ ಕಬ್ಬಿಣ ಹೀರಲು ಸಹಾಯ.")]},
  {name:L("5 pm: whey with milk","Shaam 5 baje: whey doodh ke saath","शाम 5 बजे: व्हे दूध के साथ","ಸಂಜೆ 5: ಹಾಲಿನೊಂದಿಗೆ ವೇ"),pro:"~31 g",
@@ -325,9 +329,9 @@ const GROCERY=[
  [I.egg,L("25 eggs","25 ande","25 अंडे","25 ಮೊಟ್ಟೆ")],[I.paneer,"350 g"],[I.tofu,L("400 g (2 packs)","400 g (2 pack)","400 ग्राम (2 पैक)","400 ಗ್ರಾಂ (2 ಪ್ಯಾಕ್)")],[I.chicken,"300 g"],
  [I.soya,"50 g"],[I.rajma,"50 g"],[I.lobia,"50 g"],[I.moong,"160 g"],[I.toor,"160 g"],[I.besan,"40 g"],
  [I.rice,"240 g"],[I.atta,"330 g"],[I.ragi,"40 g"],[I.poha,"50 g"],[I.oats,"90 g"],
- [I.palak,"850 g"],[I.veg,"~600 g"],[I.curd,"~1.1 kg"],[I.milk,"1.4 L"],[I.whey,L("7 scoops","7 scoop","7 स्कूप","7 ಸ್ಕೂಪ್")],[I.ghee,"~40 g"],
+ [I.palak,"850 g"],[I.veg,"~600 g"],[I.curd,"~1.1 kg"],[I.milk,"3.15 L"],[I.whey,L("7 scoops","7 scoop","7 स्कूप","7 ಸ್ಕೂಪ್")],[I.ghee,"~40 g"],
  [L("Fruit (orange / guava / amla)","Phal (santra / amrood / amla)","फल (संतरा / अमरूद / आंवला)","ಹಣ್ಣು (ಕಿತ್ತಳೆ / ಸೀಬೆ / ನೆಲ್ಲಿ)"),"7"],
- [L("Almonds / walnuts","Badaam / akhrot","बादाम / अखरोट","ಬಾದಾಮಿ / ಅಕ್ರೋಟ್"),"~105 g"],[I.seeds,"~70 g"],
+ [I.walnut,"~105 g"],[I.flax,"~70 g"],[I.coffee,"~100 g"],[I.jaggery,"~35 g"],
 ];
 const TXT={
  sub:L("Fat-loss week · mostly veg · Ayurveda-friendly · cook Mon–Sat, self-cook Sunday","Fat-loss hafta · zyada veg · Ayurveda ke hisaab se · cook Som–Shani, Ravivaar khud","फैट-लॉस हफ्ता · ज़्यादातर शाकाहारी · आयुर्वेद अनुकूल · कुक सोम–शनि, रविवार खुद","ಕೊಬ್ಬು ಇಳಿಕೆ ವಾರ · ಹೆಚ್ಚಾಗಿ ಸಸ್ಯಾಹಾರ · ಆಯುರ್ವೇದ ಸ್ನೇಹಿ · ಅಡುಗೆಯವರು ಸೋಮ–ಶನಿ, ಭಾನುವಾರ ಸ್ವಂತ"),
@@ -347,11 +351,13 @@ const TXT={
 };
 const PREP=[L("Buy fresh items twice a week (Sunday and Wednesday). Use a whole tofu pack each time; paneer keeps 4–5 days in water in the fridge.","Taaza saaman hafte mein 2 baar (Ravi aur Budh). Tofu ka poora pack ek baar mein; paneer paani mein fridge mein 4–5 din.","ताज़ा सामान हफ्ते में 2 बार (रवि और बुध)। टोफू का पूरा पैक एक बार में; पनीर पानी में फ्रिज में 4–5 दिन।","ತಾಜಾ ವಸ್ತು ವಾರಕ್ಕೆ 2 ಬಾರಿ (ಭಾನು, ಬುಧ). ಟೋಫು ಪ್ಯಾಕ್ ಒಮ್ಮೆಗೆ ಪೂರ್ತಿ; ಪನೀರ್ ನೀರಿನಲ್ಲಿ 4–5 ದಿನ."),
  L("Chicken: order fresh on Wednesday and Saturday morning. Marinate the same day, never freeze.","Chicken: Budh aur Shani subah taaza mangao. Usi din marinate, freeze nahi.","चिकन: बुध और शनि सुबह ताज़ा मंगाएं। उसी दिन मैरिनेट, फ्रीज़ नहीं।","ಚಿಕನ್: ಬುಧ ಮತ್ತು ಶನಿ ಬೆಳಿಗ್ಗೆ ತಾಜಾ ತರಿಸಿ. ಅದೇ ದಿನ ಮ್ಯಾರಿನೇಟ್, ಫ್ರೀಜ್ ಬೇಡ."),
- L("Every night: soak 4–5 almonds or walnuts for the morning.","Har raat: subah ke liye 4–5 badaam bhigo do.","हर रात: सुबह के लिए 4–5 बादाम भिगोएं।","ಪ್ರತಿ ರಾತ್ರಿ: ಬೆಳಿಗ್ಗೆಗೆ 4–5 ಬಾದಾಮಿ ನೆನೆಸಿ."),
+ L("Every night: soak 4–5 walnut halves for the morning.","Har raat: subah ke liye 4–5 akhrot bhigo do.","हर रात: सुबह के लिए 4–5 अखरोट भिगोएं।","ಪ್ರತಿ ರಾತ್ರಿ: ಬೆಳಿಗ್ಗೆಗೆ 4–5 ಅಕ್ರೋಟ್ ನೆನೆಸಿ."),
  L("Sunday night: soak moong dal for Monday dinner chilla. Monday night: soak rajma.","Ravi raat: Somvaar dinner chille ke liye moong dal bhigo. Som raat: rajma bhigo.","रवि रात: सोमवार डिनर चीले के लिए मूंग दाल भिगोएं। सोम रात: राजमा भिगोएं।","ಭಾನು ರಾತ್ರಿ: ಸೋಮವಾರ ರಾತ್ರಿ ಚಿಲ್ಲಾಗೆ ಹೆಸರು ಬೇಳೆ ನೆನೆಸಿ. ಸೋಮ ರಾತ್ರಿ: ರಾಜ್ಮಾ ನೆನೆಸಿ."),
  L("Thursday night: soak lobia and moong dal (Friday chilla).","Guru raat: lobia aur moong dal bhigo (Shukra chilla).","गुरु रात: लोबिया और मूंग दाल भिगोएं (शुक्र चीला)।","ಗುರು ರಾತ್ರಿ: ಅಲಸಂದೆ, ಹೆಸರು ಬೇಳೆ ನೆನೆಸಿ (ಶುಕ್ರ ಚಿಲ್ಲಾ)."),
  L("Saturday: leave chopped veg and paneer ready for Sunday pulao.","Shanivaar: Ravivaar pulao ke liye sabzi kaat ke, paneer ready rakho.","शनिवार: रविवार पुलाव के लिए सब्ज़ी काटकर, पनीर तैयार रखें।","ಶನಿವಾರ: ಭಾನುವಾರ ಪಲಾವ್‌ಗೆ ತರಕಾರಿ ಕತ್ತರಿಸಿ, ಪನೀರ್ ಸಿದ್ಧವಿಡಿ.")];
-const RULES=[L("No curd after sunset. Curd only at breakfast or lunch, at room temperature.","Suraj dhalne ke baad dahi nahi. Dahi sirf nashte ya lunch mein, room temperature par.","सूर्यास्त के बाद दही नहीं। दही सिर्फ नाश्ते या लंच में, सामान्य तापमान पर।","ಸೂರ್ಯಾಸ್ತದ ನಂತರ ಮೊಸರು ಬೇಡ. ಮೊಸರು ತಿಂಡಿ ಅಥವಾ ಊಟಕ್ಕೆ ಮಾತ್ರ, ಕೋಣೆಯ ಉಷ್ಣಾಂಶದಲ್ಲಿ."),
+const RULES=[L("Squeeze lemon on dal or sabzi at lunch and dinner. It helps absorb iron.","Lunch aur dinner mein dal ya sabzi par nimbu. Isse iron achhe se lagta hai.","लंच और डिनर में दाल या सब्ज़ी पर नींबू। इससे आयरन अच्छे से मिलता है।","ಊಟ ಮತ್ತು ರಾತ್ರಿ ಬೇಳೆ ಅಥವಾ ಪಲ್ಯಕ್ಕೆ ನಿಂಬೆ. ಕಬ್ಬಿಣ ಹೀರಲು ಸಹಾಯ."),
+ L("Tea or coffee at least 1 hour away from meals, and none after 2 pm.","Chai-coffee khaane se 1 ghanta door, aur 2 baje ke baad nahi.","चाय-कॉफ़ी खाने से 1 घंटा दूर, और 2 बजे के बाद नहीं।","ಚಹಾ-ಕಾಫಿ ಊಟದಿಂದ 1 ಗಂಟೆ ದೂರ, 2 ಗಂಟೆಯ ನಂತರ ಬೇಡ."),
+ L("No curd after sunset. Curd only at breakfast or lunch, at room temperature.","Suraj dhalne ke baad dahi nahi. Dahi sirf nashte ya lunch mein, room temperature par.","सूर्यास्त के बाद दही नहीं। दही सिर्फ नाश्ते या लंच में, सामान्य तापमान पर।","ಸೂರ್ಯಾಸ್ತದ ನಂತರ ಮೊಸರು ಬೇಡ. ಮೊಸರು ತಿಂಡಿ ಅಥವಾ ಊಟಕ್ಕೆ ಮಾತ್ರ, ಕೋಣೆಯ ಉಷ್ಣಾಂಶದಲ್ಲಿ."),
  L("Never serve curd or raita with chicken. Never mix banana with milk, curd or whey.","Chicken ke saath dahi/raita nahi. Kela doodh, dahi ya whey ke saath nahi.","चिकन के साथ दही/रायता नहीं। केला दूध, दही या व्हे के साथ नहीं।","ಚಿಕನ್ ಜೊತೆ ಮೊಸರು/ರಾಯಿತ ಬೇಡ. ಬಾಳೆಹಣ್ಣು ಹಾಲು, ಮೊಸರು, ವೇ ಜೊತೆ ಬೇಡ."),
  L("Fruit on its own, never with a meal.","Phal akele, khaane ke saath nahi.","फल अकेले, खाने के साथ नहीं।","ಹಣ್ಣು ಒಂಟಿಯಾಗಿ, ಊಟದ ಜೊತೆ ಬೇಡ."),
  L("Dinner light and by 8 pm: no paneer, soya or raw salad at night.","Dinner halka aur 8 baje tak: raat ko paneer, soya, kachcha salad nahi.","डिनर हल्का और 8 बजे तक: रात को पनीर, सोया, कच्चा सलाद नहीं।","ರಾತ್ರಿ ಊಟ ಹಗುರ, 8ರೊಳಗೆ: ರಾತ್ರಿ ಪನೀರ್, ಸೋಯಾ, ಹಸಿ ಸಲಾಡ್ ಬೇಡ."),
@@ -371,22 +377,22 @@ const SHOP={
   sub:L("Fresh items for Monday to Wednesday, plus a pantry check","Somvaar se Budhvaar ka taaza saaman, aur pantry check","सोमवार से बुधवार का ताज़ा सामान, और पेंट्री जांच","ಸೋಮವಾರದಿಂದ ಬುಧವಾರದ ತಾಜಾ ವಸ್ತು, ಮತ್ತು ಪ್ಯಾಂಟ್ರಿ ಪರಿಶೀಲನೆ"),
   groups:[
    {h:L("Fresh","Taaza","ताज़ा","ತಾಜಾ"),items:[[I.egg,"10"],[I.paneer,"150 g"],[I.tofu,L("1 pack (200 g)","1 pack (200 g)","1 पैक (200 ग्राम)","1 ಪ್ಯಾಕ್ (200 ಗ್ರಾಂ)")],
-    [I.curd,"500 g"],[I.milk,"600 ml"],[I.palak,"450 g"],[I.veg,"300 g"],[I.cucumber,"200 g"],[I.tomato,"6 (~450 g)"],[I.capsicum,"1"],[I.lemon,"3"],
+    [I.curd,"500 g"],[I.milk,"1.35 L"],[I.palak,"450 g"],[I.veg,"300 g"],[I.cucumber,"200 g"],[I.tomato,"6 (~450 g)"],[I.capsicum,"1"],[I.lemon,"3"],
     [I.chilli,"50 g"],[I.coriander,L("1 bunch","1 gaddi","1 गड्डी","1 ಕಟ್ಟು")],[I.ginger,"50 g"],[I.garlic,L("1 bulb","1 gaanth","1 गांठ","1 ಗಡ್ಡೆ")],[X.fruit,"3"]]},
    {h:L("Pantry: check stock, top up what's low","Pantry: stock dekho, jo kam ho wo lo","पेंट्री: स्टॉक देखें, जो कम हो वो लें","ಪ್ಯಾಂಟ್ರಿ: ಸ್ಟಾಕ್ ನೋಡಿ, ಕಡಿಮೆ ಇದ್ದದ್ದು ತನ್ನಿ"),note:L("weekly use","hafte ki khapat","हफ्ते की खपत","ವಾರದ ಬಳಕೆ"),items:[
     [I.onion,"1.5 kg"],[I.atta,"330 g"],[I.rice,"240 g"],[I.moong,"160 g"],[I.toor,"160 g"],[I.rajma,"50 g"],[I.lobia,"50 g"],[I.besan,"40 g"],[I.ragi,"40 g"],
-    [I.poha,"50 g"],[I.oats,"90 g"],[I.soya,"50 g"],[X.frozenPeas,"150 g"],[I.peanut,"15 g"],[X.nuts,"105 g"],[I.seeds,"70 g"],
+    [I.poha,"50 g"],[I.oats,"90 g"],[I.soya,"50 g"],[X.frozenPeas,"150 g"],[I.peanut,"15 g"],[I.walnut,"105 g"],[I.flax,"70 g"],[I.coffee,"~100 g"],[I.jaggery,"~35 g"],
     [I.whey,L("7 scoops","7 scoop","7 स्कूप","7 ಸ್ಕೂಪ್")],[I.ghee,"~40 g"],[I.gg,L("1 small jar","1 chhota jar","1 छोटा जार","1 ಸಣ್ಣ ಜಾರ್")],[I.oil,"~120 ml"],[I.wholespice,"—"],[X.spices,"—"]]}]},
  wed:{title:L("Wednesday shopping","Budhvaar ki shopping","बुधवार की खरीदारी","ಬುಧವಾರದ ಖರೀದಿ"),tab:L("Wed list","Budh list","बुध सूची","ಬುಧ ಪಟ್ಟಿ"),
   sub:L("Fresh items for Thursday to Sunday, plus Wednesday's chicken","Guruvaar se Ravivaar ka taaza saaman, aur Budhvaar ka chicken","गुरुवार से रविवार का ताज़ा सामान, और बुधवार का चिकन","ಗುರುವಾರದಿಂದ ಭಾನುವಾರದ ತಾಜಾ ವಸ್ತು, ಮತ್ತು ಬುಧವಾರದ ಚಿಕನ್"),
   groups:[
    {h:L("Fresh","Taaza","ताज़ा","ತಾಜಾ"),items:[[I.chicken,L("150 g (Wednesday, cook the same day)","150 g (Budhvaar, usi din banao)","150 ग्राम (बुधवार, उसी दिन बनाएं)","150 ಗ್ರಾಂ (ಬುಧವಾರ, ಅದೇ ದಿನ ಬೇಯಿಸಿ)")],[I.egg,"15"],[I.paneer,"200 g"],[I.tofu,L("1 pack (200 g)","1 pack (200 g)","1 पैक (200 ग्राम)","1 ಪ್ಯಾಕ್ (200 ಗ್ರಾಂ)")],
-    [I.curd,"500 g"],[I.milk,"800 ml"],[I.palak,"400 g"],[I.veg,"300 g"],[I.cucumber,"250 g"],[I.tomato,"8 (~600 g)"],[I.capsicum,"2"],[I.carrot,"1"],[I.beet,L("1 small","1 chhota","1 छोटा","1 ಸಣ್ಣ")],
+    [I.curd,"500 g"],[I.milk,"1.8 L"],[I.palak,"400 g"],[I.veg,"300 g"],[I.cucumber,"250 g"],[I.tomato,"8 (~600 g)"],[I.capsicum,"2"],[I.carrot,"1"],[I.beet,L("1 small","1 chhota","1 छोटा","1 ಸಣ್ಣ")],
     [I.lemon,"3"],[I.curryleaf,L("1 bunch","1 gaddi","1 गड्डी","1 ಕಟ್ಟು")],[X.fruit,"4"]]},
    {h:L("Saturday morning","Shanivaar subah","शनिवार सुबह","ಶನಿವಾರ ಬೆಳಿಗ್ಗೆ"),items:[[I.chicken,L("150 g (cook the same day)","150 g (usi din banao)","150 ग्राम (उसी दिन बनाएं)","150 ಗ್ರಾಂ (ಅದೇ ದಿನ ಬೇಯಿಸಿ)")]]}]},
 };
 const SHOPNOTES=[L("Eggs keep 2–3 weeks in the fridge, so a 30-egg tray once every 10 days also works.","Ande fridge mein 2–3 hafte chalte hain, 10 din mein ek 30-ande ki tray bhi chalegi.","अंडे फ्रिज में 2–3 हफ्ते चलते हैं, 10 दिन में एक 30 अंडे की ट्रे भी चलेगी।","ಮೊಟ್ಟೆ ಫ್ರಿಜ್‌ನಲ್ಲಿ 2–3 ವಾರ ಇರುತ್ತದೆ, 10 ದಿನಕ್ಕೊಮ್ಮೆ 30 ಮೊಟ್ಟೆ ಟ್ರೇ ಕೂಡ ಸಾಕು."),
- L("Milk: 200 ml a day for the 5 pm whey. Buy small packs so nothing goes sour.","Doodh: roz 200 ml, shaam ke whey ke liye. Chhote pack lo taaki kharab na ho.","दूध: रोज़ 200 ml, शाम के व्हे के लिए। छोटे पैक लें ताकि खराब न हो।","ಹಾಲು: ದಿನಕ್ಕೆ 200 ml, ಸಂಜೆಯ ವೇಗೆ. ಹಾಳಾಗದಂತೆ ಸಣ್ಣ ಪ್ಯಾಕ್ ತನ್ನಿ."),
+ L("Low-fat milk: 450 ml a day (250 ml coffee + 200 ml whey). Buy 500 ml packs, one a day.","Low-fat doodh: roz 450 ml (250 coffee + 200 whey). Roz ek 500 ml pack.","लो-फैट दूध: रोज़ 450 ml (250 कॉफ़ी + 200 व्हे)। रोज़ एक 500 ml पैक।","ಕಡಿಮೆ ಕೊಬ್ಬಿನ ಹಾಲು: ದಿನಕ್ಕೆ 450 ml (250 ಕಾಫಿ + 200 ವೇ). ದಿನಕ್ಕೊಂದು 500 ml ಪ್ಯಾಕ್."),
  L("Dry pantry items last weeks. Buy the smallest pack and refill only when it runs low.","Sukha saaman hafton chalta hai. Chhota pack lo, khatam hone par hi bharo.","सूखा सामान हफ्तों चलता है। छोटा पैक लें, खत्म होने पर ही भरें।","ಒಣ ವಸ್ತು ವಾರಗಟ್ಟಲೆ ಇರುತ್ತದೆ. ಸಣ್ಣ ಪ್ಯಾಕ್ ತನ್ನಿ, ಮುಗಿದಾಗ ಮಾತ್ರ ತುಂಬಿಸಿ.")];
 let ticks={};try{ticks=JSON.parse(localStorage.getItem("kp-ticks")||"{}")}catch(e){}
 function shopView(k){const sh=SHOP[k];
@@ -414,7 +420,7 @@ function dailyView(){return `<div class="dayhead"><h2>${esc(t(TXT.dailyH))}</h2>
 function summaryView(){
   const glance=`<div class="tblwrap"><table><thead><tr><th></th>${MEALS.map(m=>`<th>${esc(t(m[1]))}</th>`).join("")}</tr></thead><tbody>${DAYS.map(d=>`<tr><td><b>${esc(t(d.s))}</b></td>${MEALS.map(([k])=>`<td>${d[k].map(x=>esc(t(x.name))).join(", ")}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
   return `<div class="sum"><h2>${esc(t(TXT.targets))}</h2>
-  <div class="targets"><div class="t"><b>~2,000</b><span>${esc(t(TXT.kcal))}</span></div><div class="t"><b>120–140</b><span>${esc(t(TXT.pro))}</span></div><div class="t"><b>3</b><span>${esc(t(TXT.oil))}</span></div><div class="t"><b>30+</b><span>${esc(t(TXT.fib))}</span></div><div class="t"><b>10,000</b><span>${esc(t(TXT.steps10))}</span></div></div>
+  <div class="targets"><div class="t"><b>~2,100</b><span>${esc(t(TXT.kcal))}</span></div><div class="t"><b>130–145</b><span>${esc(t(TXT.pro))}</span></div><div class="t"><b>3</b><span>${esc(t(TXT.oil))}</span></div><div class="t"><b>30+</b><span>${esc(t(TXT.fib))}</span></div><div class="t"><b>10,000</b><span>${esc(t(TXT.steps10))}</span></div></div>
   <div class="box" style="margin-bottom:14px"><h3>${esc(t(TXT.weekGlance))}</h3>${glance}</div>
   <div class="grid2"><div class="box"><h3>${esc(t(TXT.grocery))}</h3><div class="tblwrap"><table><thead><tr><th>${esc(t(TXT.item))}</th><th>${esc(t(TXT.qty))}</th></tr></thead><tbody>${GROCERY.map(([a,b])=>`<tr><td>${esc(t(a))}</td><td class="num">${esc(t(b))}</td></tr>`).join("")}</tbody></table></div></div>
   <div style="display:grid;gap:14px;align-content:start"><div class="box"><h3>${esc(t(TXT.prep))}</h3><ol class="steps">${PREP.map(p=>`<li>${esc(t(p))}</li>`).join("")}</ol></div>
