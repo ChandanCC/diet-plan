@@ -27,7 +27,9 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,5vw,38px);lin
 .langs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
 .langs button{border:0;background:transparent;color:var(--fg);font:600 13px var(--body);padding:6px 12px;border-radius:999px;cursor:pointer}
 .langs button[aria-pressed="true"]{background:var(--leaf);color:var(--bg)}
-nav.days{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:12px 0 10px;scrollbar-width:none}
+.navwrap{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-bottom:2px;border-bottom:1px solid var(--line)}
+nav.days.extra{padding-top:0}
+nav.days{display:flex;gap:6px;overflow-x:auto;padding:12px 0 10px;scrollbar-width:none}
 nav.days::-webkit-scrollbar{display:none}
 nav.days button{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:600 14px var(--body);padding:8px 14px;border-radius:10px;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:64px}
 nav.days button small{font-weight:500;font-size:11px;color:var(--muted)}
@@ -491,7 +493,7 @@ function render(){
   document.getElementById("app").innerHTML=`
   <header class="top"><div><h1>Chandan's Kitchen Plan</h1><p class="sub">${esc(t(TXT.sub))}</p></div>
   ${PRINT?"":`<div class="langs" role="group" aria-label="Language">${LANGS.map(([k,n])=>`<button data-lang="${k}" aria-pressed="${lang===k}">${n}</button>`).join("")}</div>`}</header>
-  ${PRINT?"":`<nav class="days" role="tablist">${tabs.map(x=>x[0]==="sep"?`<span class="sep"></span>`:`<button role="tab" data-day="${x[0]}" aria-selected="${state.day===x[0]}">${esc(x[1])}${!DAYS.find(d=>d.id===x[0])?`<small>${esc(x[2])}</small>`:`<small>${esc(t(DAYS.find(d=>d.id===x[0]).cook?TXT.cookDay:TXT.selfDay).split("·")[0].trim())}</small>`}</button>`).join("")}</nav>`}
+  ${PRINT?"":`<div class="navwrap">${[tabs.slice(0,tabs.findIndex(x=>x[0]==="sep")),tabs.slice(tabs.findIndex(x=>x[0]==="sep")+1)].map((row,ri)=>`<nav class="days${ri?" extra":""}" role="tablist">${row.map(x=>x[0]==="sep"?`<span class="sep"></span>`:`<button role="tab" data-day="${x[0]}" aria-selected="${state.day===x[0]}">${esc(x[1])}${!DAYS.find(d=>d.id===x[0])?`<small>${esc(x[2])}</small>`:`<small>${esc(t(DAYS.find(d=>d.id===x[0]).cook?TXT.cookDay:TXT.selfDay).split("·")[0].trim())}</small>`}</button>`).join("")}</nav>`).join("")}</div>`}
   ${body}`;
   try{localStorage.setItem("kp-state",JSON.stringify(state));localStorage.setItem("kp-lang",lang)}catch(e){}
 }
